@@ -20,16 +20,53 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    MainViewController *main = [[MainViewController alloc] init];
-    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:main];
-    
-    
-    
-    
-    
-    
-    
+
     UITabBarController *tab = [[UITabBarController alloc] init];
+    tab.tabBar.barTintColor = [UIColor whiteColor];
+    
+    //tab.tabBar.tintColor = [UIColor colorWithRed:<#(CGFloat)#> green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
+    //主页
+    UIStoryboard *main = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UINavigationController *mainNav = main.instantiateInitialViewController;
+    //mainNav.tabBarItem.title = @"主页";
+    mainNav.tabBarItem.image = [UIImage imageNamed:@"ft_home_normal_ic"];
+    mainNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    //tabbar设置选中图片按照原始状态显示
+    UIImage *image = [UIImage imageNamed:@"ft_home_selected_ic"];
+    mainNav.tabBarItem.selectedImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    //发现
+    UIStoryboard *discovery = [UIStoryboard storyboardWithName:@"DiscoverStoryboard" bundle:nil];
+    UINavigationController *nav2 = discovery.instantiateInitialViewController;
+    //nav2.tabBarItem.title = @"发现";
+    nav2.tabBarItem.image = [UIImage imageNamed:@"ft_found_normal_ic"];
+    nav2.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    UIImage *image1 = [UIImage imageNamed:@"ft_found_selected_ic"];
+    nav2.tabBarItem.selectedImage = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    //我的
+    UIStoryboard *mine = [UIStoryboard storyboardWithName:@"MineStoryboard" bundle:nil];
+    UINavigationController *nav3 = mine.instantiateInitialViewController;
+    //nav3.tabBarItem.title = @"我的";
+    nav3.tabBarItem.image = [UIImage imageNamed:@"ft_person_normal_ic"];
+    //按照上左下右的顺序设置
+    nav3.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+    UIImage *image2 = [UIImage imageNamed:@"ft_person_selected_ic"];
+    nav3.tabBarItem.selectedImage = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    
+    //添加被管理的视图控制器
+    tab.viewControllers = @[mainNav, nav2, nav3];
+    
+    self.window.rootViewController = tab;
+    
+    
+    
+    
+    
     
     
     

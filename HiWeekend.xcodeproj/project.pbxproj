@@ -108,8 +108,8 @@
 		7A1461C41C3A4E35009ECF24 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7A1461C51C3A4E35009ECF24 /* Discover */,
 				7A1461CB1C3A4E35009ECF24 /* Main */,
+				7A1461C51C3A4E35009ECF24 /* Discover */,
 				7A1461D11C3A4E35009ECF24 /* Mine */,
 			);
 			path = Classes;
@@ -470,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HiWeekend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangli.HiWeekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HiWeekend/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = zhangli.HiWeekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
