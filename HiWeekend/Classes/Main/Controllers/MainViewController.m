@@ -50,8 +50,7 @@
     
     //请求网络数据
     [self requestModel];
-    
-    
+        
     
 }
 #pragma mark---UITableViewDataSource
@@ -128,7 +127,7 @@
     [btn1 setImage:[UIImage imageNamed:str1] forState:UIControlStateNormal];
     [btn1 addTarget:self action:@selector(goodActivityButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn1];
-    
+    //热门活动
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
     btn2.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 2, 186 + [UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.width / 2, 343 - 186 - [UIScreen mainScreen].bounds.size.width / 4);
     NSString *str2 = @"home_zhuanti";
