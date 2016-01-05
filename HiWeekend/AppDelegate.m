@@ -24,7 +24,7 @@
     UITabBarController *tab = [[UITabBarController alloc] init];
     tab.tabBar.barTintColor = [UIColor whiteColor];
     
-    //tab.tabBar.tintColor = [UIColor colorWithRed:<#(CGFloat)#> green:<#(CGFloat)#> blue:<#(CGFloat)#> alpha:<#(CGFloat)#>]
+    
     //主页
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     UINavigationController *mainNav = main.instantiateInitialViewController;
