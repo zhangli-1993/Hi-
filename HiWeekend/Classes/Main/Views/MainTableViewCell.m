@@ -28,7 +28,7 @@
 
 - (void)setModel:(MainModel *)model{
     [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:model.image_big] placeholderImage:nil];
-    NSLog(@"%@", model.title);
+   
     self.activityNameLable.text = model.title;
     self.activityPriceLable.text = model.price;
 }
