@@ -20,12 +20,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hS-y4-Esk">
-                        <rect key="frame" x="246" y="168" width="129" height="34"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRp-y7-29Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="168"/>
                     </imageView>
@@ -36,6 +30,13 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hS-y4-Esk">
+                        <rect key="frame" x="290" y="174" width="85" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <state key="normal" title=" Button" image="pos">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -44,7 +45,10 @@
                 <outlet property="activityNameLable" destination="8VM-Zm-jnq" id="k52-Vf-lbe"/>
                 <outlet property="activityPriceLable" destination="qGR-a1-8yn" id="jWy-Hf-zGr"/>
             </connections>
-            <point key="canvasLocation" x="579.5" y="402.5"/>
+            <point key="canvasLocation" x="586.5" y="535.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pos" width="12" height="15"/>
+    </resources>
 </document>

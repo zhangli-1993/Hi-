@@ -11,6 +11,13 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "MainModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "SelectCityViewController.h"
+#import "SearchViewController.h"
+#import "ActivityDetailViewController.h"
+#import "ThemeViewController.h"
+#import "ClassifyViewController.h"
+#import "GoodActivityViewController.h"
+#import "HotActivityViewController.h"
 @interface MainViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //全部列表数据
@@ -96,6 +103,18 @@
     return 203;
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        ActivityDetailViewController *aVC = [[ActivityDetailViewController alloc] init];
+        [self.navigationController pushViewController:aVC animated:YES];
+    } else {
+        ThemeViewController *tVC = [[ThemeViewController alloc] init];
+        [self.navigationController pushViewController:tVC animated:YES];
+    }
+}
+
+
+
 #pragma mark----Custom Method
 //自定义tableView头部
 - (void)configTableViewHeaderView{
@@ -137,32 +156,37 @@
     
     
 }
-
+//分类列表
 - (void)mainActivityButtonAction:(UIButton *)btn{
-    
+    ClassifyViewController *cVVC = [[ClassifyViewController alloc] init];
+    [self.navigationController pushViewController:cVVC animated:YES];
 }
 //精选活动
 - (void)goodActivityButtonAction{
-    
+    GoodActivityViewController *gVC = [[GoodActivityViewController alloc] init];
+    [self.navigationController pushViewController:gVC animated:YES];
 }
-
+//热门专题
 - (void)hotActivityButtonAction{
-    
+    HotActivityViewController *hVC = [[HotActivityViewController alloc] init];
+    [self.navigationController pushViewController:hVC animated:YES];
 }
 
 - (void)selectCityAction{
-    
+    SelectCityViewController *selectCity = [[SelectCityViewController alloc] init];
+    [self.navigationController presentViewController:selectCity animated:YES completion:nil];
 }
 
 - (void)SearchAcitivity{
-    
+    SearchViewController *searchVC = [[SearchViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 - (void)requestModel{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:@"http://e.kumi.cn/app/v1.3/index.php?_s_=02a411494fa910f5177d82a6b0a63788&_t_=1451307342&channelid=appstore&cityid=1&lat=34.62172291944134&limit=30&lng=112.4149512442411&page=1" parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%lld", downloadProgress.totalUnitCount);
+    [manager GET:kMainDataList parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        ZLLog(@"%lld", downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;
         NSString *status = resultDic[@"status"];
@@ -195,16 +219,12 @@
             }
             [self.listArray addObject:self.themeArray];
             [self.tableView reloadData];
-  
-            
-            
-            
             
         } else {
             
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"%@", error);
+        ZLLog(@"%@", error);
     }];
     
 }
