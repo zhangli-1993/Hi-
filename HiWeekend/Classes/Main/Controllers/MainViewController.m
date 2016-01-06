@@ -80,7 +80,7 @@
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc] init];
-    UIImageView *sectionView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width / 2 - 160, 6, 320, 16)];
+    UIImageView *sectionView = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth / 2 - 160, 6, 320, 16)];
     if (section == 0) {
         sectionView.image = [UIImage imageNamed:@"home_recommed_ac"];;
     } else {
@@ -99,21 +99,21 @@
 #pragma mark----Custom Method
 //自定义tableView头部
 - (void)configTableViewHeaderView{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 343)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 343)];
         //view.backgroundColor = [UIColor orangeColor];
         self.tableView.tableHeaderView = view;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 186)];
-    scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * self.adArray.count, 186);
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 186)];
+    scrollView.contentSize = CGSizeMake(kWidth * self.adArray.count, 186);
     for (int i = 0; i < self.adArray.count; i++) {
-        UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * i, 0, [UIScreen mainScreen].bounds.size.width, 186)];
+        UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth * i, 0, kWidth, 186)];
         [imageview sd_setImageWithURL:[NSURL URLWithString:self.adArray[i]] placeholderImage:nil];
         [scrollView addSubview:imageview];
     }
     [view addSubview:scrollView];
-    //NSArray *imageArray =
+    
     for (int i = 0; i < 4; i++) {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(i * [UIScreen mainScreen].bounds.size.width / 4, 186, [UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.width / 4);
+        btn.frame = CGRectMake(i * kWidth / 4, 186, kWidth / 4, kWidth / 4);
         NSString *str = [NSString stringWithFormat:@"home_icon_%d", i + 1];
         [btn setImage:[UIImage imageNamed:str] forState:UIControlStateNormal];
         btn.tag = 100 + i;
@@ -122,14 +122,14 @@
     }
     //精选活动
     UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn1.frame = CGRectMake(0, 186 + [UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.width / 2, 343 - 186 - [UIScreen mainScreen].bounds.size.width / 4);
+    btn1.frame = CGRectMake(0, 186 + kWidth / 4, kWidth / 2, 343 - 186 - kWidth / 4);
     NSString *str1 = @"home_huodong";
     [btn1 setImage:[UIImage imageNamed:str1] forState:UIControlStateNormal];
     [btn1 addTarget:self action:@selector(goodActivityButtonAction) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:btn1];
     //热门活动
     UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn2.frame = CGRectMake([UIScreen mainScreen].bounds.size.width / 2, 186 + [UIScreen mainScreen].bounds.size.width / 4, [UIScreen mainScreen].bounds.size.width / 2, 343 - 186 - [UIScreen mainScreen].bounds.size.width / 4);
+    btn2.frame = CGRectMake(kWidth / 2, 186 + kWidth / 4, kWidth / 2, 343 - 186 - kWidth / 4);
     NSString *str2 = @"home_zhuanti";
     [btn2 setImage:[UIImage imageNamed:str2] forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(hotActivityButtonAction) forControlEvents:UIControlEventTouchUpInside];
