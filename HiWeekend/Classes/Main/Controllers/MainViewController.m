@@ -165,6 +165,7 @@
     GoodActivityViewController *gVC = [[GoodActivityViewController alloc] init];
     [self.navigationController pushViewController:gVC animated:YES];
 }
+
 //热门专题
 - (void)hotActivityButtonAction{
     HotActivityViewController *hVC = [[HotActivityViewController alloc] init];
