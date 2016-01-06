@@ -18,7 +18,7 @@
 #import "ClassifyViewController.h"
 #import "GoodActivityViewController.h"
 #import "HotActivityViewController.h"
-@interface MainViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MainViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //全部列表数据
 @property(nonatomic, strong) NSMutableArray *listArray;
@@ -28,6 +28,8 @@
 @property(nonatomic, strong) NSMutableArray *themeArray;
 //广告
 @property(nonatomic, strong) NSMutableArray *adArray;
+@property(nonatomic, strong) UIScrollView *scrollView;
+@property(nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
@@ -119,16 +121,27 @@
 //自定义tableView头部
 - (void)configTableViewHeaderView{
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 343)];
-        //view.backgroundColor = [UIColor orangeColor];
+        //添加轮播图
         self.tableView.tableHeaderView = view;
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 186)];
-    scrollView.contentSize = CGSizeMake(kWidth * self.adArray.count, 186);
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kWidth, 186)];
+    self.scrollView.contentSize = CGSizeMake(kWidth * self.adArray.count, 186);
+    self.scrollView.pagingEnabled = YES;
+    //不显示滚动条
+    self.scrollView.showsHorizontalScrollIndicator = NO;
+    //创建小圆点
+    self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, 186 - 30, kWidth, 30)];
+    self.pageControl.numberOfPages = self.adArray.count;
+    self.pageControl.currentPageIndicatorTintColor = [UIColor cyanColor];
+    self.scrollView.delegate = self;
+    [self.pageControl addTarget:self action:@selector(pageSelectAction:) forControlEvents:UIControlEventValueChanged];
     for (int i = 0; i < self.adArray.count; i++) {
         UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(kWidth * i, 0, kWidth, 186)];
         [imageview sd_setImageWithURL:[NSURL URLWithString:self.adArray[i]] placeholderImage:nil];
-        [scrollView addSubview:imageview];
+        [self.scrollView addSubview:imageview];
     }
-    [view addSubview:scrollView];
+    
+    [view addSubview:self.scrollView];
+    [view addSubview:self.pageControl];
     
     for (int i = 0; i < 4; i++) {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -255,8 +268,22 @@
     }
     return _adArray;
 }
+#pragma mark----首页轮播图
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //第一步：获取scrollView页面的宽度
+    CGFloat pageWidth = self.scrollView.frame.size.width;
+    //第二步：获取scrollView停止时候的偏移量
+    CGPoint offset = self.scrollView.contentOffset;
+    //第三步：通过偏移量计算当前页数
+    NSInteger pageNum = offset.x / pageWidth;
+    self.pageControl.currentPage = pageNum;
+}
 
-
+- (void)pageSelectAction:(UIPageControl *)pageControl{
+    NSInteger pageNum = pageControl.currentPage;
+    CGFloat pageWideth = self.scrollView.frame.size.width;
+    self.scrollView.contentOffset = CGPointMake(pageNum * pageWideth, 0);
+}
 
 
 - (void)didReceiveMemoryWarning {
