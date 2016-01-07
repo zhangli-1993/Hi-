@@ -11,7 +11,9 @@
 #import "MBProgressHUD.h"
 #import "ActivityDetailView.h"
 @interface ActivityDetailViewController ()
-
+{
+    NSString *phoneNum;
+}
 @property (strong, nonatomic) IBOutlet ActivityDetailView *activityDetailView;
 
 @end
@@ -23,6 +25,10 @@
     self.title = @"活动详情";
     
     [self showBackButton];
+    //去地图页面
+    [self.activityDetailView.MapButton addTarget:self action:@selector(mapAction:) forControlEvents:UIControlEventTouchUpInside];
+    //打电话页面
+    [self.activityDetailView.MakeCaiiButton addTarget:self action:@selector(makeCallAction:) forControlEvents:UIControlEventTouchUpInside];
     
     [self getModel];
 }
@@ -44,6 +50,7 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *successDic = dic[@"success"];
             self.activityDetailView.dataDic = successDic;
+            phoneNum = successDic[@"tel"];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -51,6 +58,25 @@
     }];
     
 }
+//去地图页面
+- (void)mapAction:(UIButton *)btn{
+    
+}
+//打电话
+- (void)makeCallAction:(UIButton *)btn{
+    //程序外打电话，不返回应用程序
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", phoneNum]]];
+    //程序内打电话，打完电话之后还返回当前应用程序
+    UIWebView *cellPhoneWebView = [[UIWebView alloc] init];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", phoneNum]]];
+    [cellPhoneWebView loadRequest:request];
+    [self.view addSubview:cellPhoneWebView];
+    
+}
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

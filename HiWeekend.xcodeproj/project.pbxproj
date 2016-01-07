@@ -27,6 +27,8 @@
 		7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */; };
 		7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */; };
 		7A5D0B4C1C3E10FC002D4089 /* ActivityDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */; };
+		7A5D0B521C3E4C8F002D4089 /* HWtools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B511C3E4C8F002D4089 /* HWtools.m */; };
+		7A5D0B551C3E5B16002D4089 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B541C3E5B16002D4089 /* UIView+Extension.m */; };
 		7AAA6B081C3B9D640030B5E5 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA6B071C3B9D640030B5E5 /* File */; };
 		7AAA6B0B1C3BA0660030B5E5 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */; };
 		7AAB91461C3D1B030015E05A /* File1 in Resources */ = {isa = PBXBuildFile; fileRef = 7AAB91451C3D1B030015E05A /* File1 */; };
@@ -74,6 +76,10 @@
 		7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		7A5D0B4A1C3E10FC002D4089 /* ActivityDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailView.h; sourceTree = "<group>"; };
 		7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailView.m; sourceTree = "<group>"; };
+		7A5D0B501C3E4C8F002D4089 /* HWtools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWtools.h; sourceTree = "<group>"; };
+		7A5D0B511C3E4C8F002D4089 /* HWtools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWtools.m; sourceTree = "<group>"; };
+		7A5D0B531C3E5B16002D4089 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		7A5D0B541C3E5B16002D4089 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		7AAA6B071C3B9D640030B5E5 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		7AAA6B091C3BA0660030B5E5 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
@@ -129,8 +135,12 @@
 				7A1461AE1C3A1C3A009ECF24 /* AppDelegate.m */,
 				7A0E70A91C3C93AC00D825CC /* pch.pch */,
 				7A0E70D51C3CB33D00D825CC /* HWHeader.h */,
+				7A5D0B501C3E4C8F002D4089 /* HWtools.h */,
+				7A5D0B511C3E4C8F002D4089 /* HWtools.m */,
 				7AAB91471C3D201F0015E05A /* UIViewController+Common.h */,
 				7AAB91481C3D201F0015E05A /* UIViewController+Common.m */,
+				7A5D0B531C3E5B16002D4089 /* UIView+Extension.h */,
+				7A5D0B541C3E5B16002D4089 /* UIView+Extension.m */,
 				7A1461C41C3A4E35009ECF24 /* Classes */,
 				7A1461DA1C3A4E3F009ECF24 /* Library */,
 				7A1461DB1C3A4FB2009ECF24 /* Resource */,
@@ -433,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5D0B551C3E5B16002D4089 /* UIView+Extension.m in Sources */,
 				7A0E70E41C3CBFEE00D825CC /* ClassifyViewController.m in Sources */,
 				7A0E70EA1C3CC06F00D825CC /* HotActivityViewController.m in Sources */,
 				7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */,
@@ -447,6 +458,7 @@
 				7A1461AC1C3A1C3A009ECF24 /* main.m in Sources */,
 				7A0E70D81C3CBBF200D825CC /* SelectCityViewController.m in Sources */,
 				7A1461D81C3A4E35009ECF24 /* MainViewController.m in Sources */,
+				7A5D0B521C3E4C8F002D4089 /* HWtools.m in Sources */,
 				7AAB91491C3D201F0015E05A /* UIViewController+Common.m in Sources */,
 				7AAA6B0B1C3BA0660030B5E5 /* MainModel.m in Sources */,
 			);

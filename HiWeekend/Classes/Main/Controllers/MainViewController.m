@@ -109,9 +109,13 @@
     return 203;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        ActivityDetailViewController *aVC = [[ActivityDetailViewController alloc] init];
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+        ActivityDetailViewController *aVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"advc"];
+        MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
+        aVC.activityId = mainModel.activityId;
+
         [self.navigationController pushViewController:aVC animated:YES];
     } else {
         ThemeViewController *tVC = [[ThemeViewController alloc] init];
