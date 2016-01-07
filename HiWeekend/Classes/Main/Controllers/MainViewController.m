@@ -185,7 +185,8 @@
 - (void)touchAD:(UIButton *)btn{
     NSString *type = self.adArray[btn.tag - 100][@"type"];
     if ([type integerValue] == 1) {
-        ActivityDetailViewController *aVC = [[ActivityDetailViewController alloc] init];
+        UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+         ActivityDetailViewController *aVC = [mainSB instantiateViewControllerWithIdentifier:@"advc"];
         aVC.activityId = self.adArray[btn.tag - 100][@"id"];
         [self.navigationController pushViewController:aVC animated:YES];
     } else {

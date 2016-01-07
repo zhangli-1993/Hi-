@@ -9,7 +9,10 @@
 #import "ActivityDetailViewController.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "MBProgressHUD.h"
+#import "ActivityDetailView.h"
 @interface ActivityDetailViewController ()
+
+@property (strong, nonatomic) IBOutlet ActivityDetailView *activityDetailView;
 
 @end
 
@@ -18,9 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"活动详情";
-    //[self getModel];
+    
     [self showBackButton];
-     
+    
+    [self getModel];
 }
 
 #pragma mark-------自定义方法
@@ -33,7 +37,14 @@
         ZLLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        
+        //解析数据
+        NSDictionary *dic = responseObject;
+        NSString *status = dic[@"status"];
+        NSInteger code = [dic[@"code"] integerValue];
+        if ([status isEqualToString:@"success"] && code == 0) {
+            NSDictionary *successDic = dic[@"success"];
+            self.activityDetailView.dataDic = successDic;
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         ZLLog(@"error = %@", error);

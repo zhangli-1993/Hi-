@@ -10,4 +10,8 @@
 
 @interface ActivityDetailViewController : UIViewController
 @property(nonatomic, strong)NSString *activityId;
+
+
+
+
 @end

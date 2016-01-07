@@ -26,6 +26,7 @@
 		7A1461E31C3A50E0009ECF24 /* MineStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E21C3A50E0009ECF24 /* MineStoryboard.storyboard */; };
 		7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */; };
 		7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */; };
+		7A5D0B4C1C3E10FC002D4089 /* ActivityDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */; };
 		7AAA6B081C3B9D640030B5E5 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA6B071C3B9D640030B5E5 /* File */; };
 		7AAA6B0B1C3BA0660030B5E5 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */; };
 		7AAB91461C3D1B030015E05A /* File1 in Resources */ = {isa = PBXBuildFile; fileRef = 7AAB91451C3D1B030015E05A /* File1 */; };
@@ -71,6 +72,8 @@
 		7A1461E41C3A766B009ECF24 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		7A5D0B4A1C3E10FC002D4089 /* ActivityDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailView.h; sourceTree = "<group>"; };
+		7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailView.m; sourceTree = "<group>"; };
 		7AAA6B071C3B9D640030B5E5 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		7AAA6B091C3BA0660030B5E5 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				7A1461E01C3A50CF009ECF24 /* MainStoryboard.storyboard */,
 				7A1461E41C3A766B009ECF24 /* MainTableViewCell.h */,
 				7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */,
+				7A5D0B4A1C3E10FC002D4089 /* ActivityDetailView.h */,
+				7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */,
 				7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */,
 			);
 			path = Views;
@@ -438,6 +443,7 @@
 				7A0E70DE1C3CBE7000D825CC /* ActivityDetailViewController.m in Sources */,
 				7A0E70DB1C3CBD9100D825CC /* SearchViewController.m in Sources */,
 				7A0E70E11C3CBF3F00D825CC /* ThemeViewController.m in Sources */,
+				7A5D0B4C1C3E10FC002D4089 /* ActivityDetailView.m in Sources */,
 				7A1461AC1C3A1C3A009ECF24 /* main.m in Sources */,
 				7A0E70D81C3CBBF200D825CC /* SelectCityViewController.m in Sources */,
 				7A1461D81C3A4E35009ECF24 /* MainViewController.m in Sources */,
