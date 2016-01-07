@@ -22,6 +22,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
+@property (nonatomic, assign) CGFloat SUMH;
 
 @end
 
@@ -45,34 +46,35 @@
     self.activityTimeLable.text = [NSString stringWithFormat:@" 正在进行：%@-%@", startTime, endTime];
     //活动详情
     [self drawContentWithArray:dataDic[@"content"]];
-    
+    //温馨提示
+    [self showReminderWithString:dataDic[@"reminder"]];
     
 }
 //400是前面所有东西的高度
 - (void)drawContentWithArray:(NSArray *)contentArray{
     //前面每一个数组的累加高度
-    NSInteger SUMH = 0;
+    self.SUMH = 0;
     //title部分
     for (NSDictionary *dic in contentArray) {
         //如果标题存在
         NSString *title = dic[@"title"];
         if (title != nil) {
-            UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 400 + SUMH + 5, kWidth - 20, 30)];
+            UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 400 + self.SUMH + 5, kWidth - 20, 30)];
             titleLabel.text = title;
             [self.mainScrollView addSubview:titleLabel];
             //加上title的高度
-            SUMH += 30;
+            self.SUMH += 30;
          }
         //描述Label
         CGFloat height1 = [HWtools getLableTextHeight:dic[@"description"] bigestSize:CGSizeMake(kWidth - 20, 1000) textFont:15.0];
         //本次label的高度 = 405 + 前面每一个array的高度
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 405 + SUMH, kWidth - 20, height1)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 405 + self.SUMH, kWidth - 20, height1)];
         label.text = dic[@"description"];
         label.numberOfLines = 0;
         label.font = [UIFont systemFontOfSize:15.0];
         [self.mainScrollView addSubview:label];
         //加上description的高度
-        SUMH+=height1;
+        self.SUMH+=height1;
         
         NSArray *urlsArray = dic[@"urls"];
         //图片的起始位置的高度
@@ -87,11 +89,30 @@
             imageH += height * (kWidth - 20)/ width + 5;
         }
         //加上所有图片的高度
-        SUMH += imageH;
+        self.SUMH += imageH;
     }
 }
 
-
+- (void)showReminderWithString:(NSString *)str{
+    UIImageView *line1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, self.SUMH + 420, kWidth, 8)];
+    [line1 setImage:[UIImage imageNamed:@"grayLine"]];
+    [self.mainScrollView addSubview:line1];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(25, self.SUMH + 431, kWidth - 25, 30)];
+    title.text = @"温馨提示";
+    title.font = [UIFont systemFontOfSize:15.0];
+    [self.mainScrollView addSubview:title];
+    UIImageView *line2 = [[UIImageView alloc] initWithFrame:CGRectMake(0, title.bottom + 3, kWidth, 1)];
+    [line2 setImage:[UIImage imageNamed:@"grayLine"]];
+    [self.mainScrollView addSubview:line2];
+    
+    CGFloat height = [HWtools getLableTextHeight:str bigestSize:CGSizeMake(kWidth - 20, 1000) textFont:15.0];
+    UILabel *reminderLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, title.bottom + 7, kWidth - 20, height)];
+    reminderLabel.text = str;
+    reminderLabel.numberOfLines = 0;
+    reminderLabel.font = [UIFont systemFontOfSize:15.0];
+    [self.mainScrollView addSubview:reminderLabel];
+    self.mainScrollView.contentSize = CGSizeMake(kWidth, reminderLabel.bottom + 80);
+}
 
 
 
