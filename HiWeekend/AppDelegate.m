@@ -21,8 +21,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    UITabBarController *tab = [[UITabBarController alloc] init];
-    tab.tabBar.barTintColor = [UIColor whiteColor];
+    self.tab = [[UITabBarController alloc] init];
+    self.tab.tabBar.barTintColor = [UIColor whiteColor];
     
     
     //主页
@@ -59,9 +59,9 @@
     
     
     //添加被管理的视图控制器
-    tab.viewControllers = @[mainNav, nav2, nav3];
+    self.tab.viewControllers = @[mainNav, nav2, nav3];
     
-    self.window.rootViewController = tab;
+    self.window.rootViewController = self.tab;
     
     
     

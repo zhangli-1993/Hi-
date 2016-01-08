@@ -1,7 +1,7 @@
 //
 //  ActivityDetailViewController.m
 //  HiWeekend
-//
+//  活动详情
 //  Created by scjy on 16/1/6.
 //  Copyright © 2016年 scjy. All rights reserved.
 //
@@ -25,6 +25,8 @@
     self.title = @"活动详情";
     
     [self showBackButton];
+    //隐藏tabbar
+    self.tabBarController.tabBar.hidden = YES;
     //去地图页面
     [self.activityDetailView.MapButton addTarget:self action:@selector(mapAction:) forControlEvents:UIControlEventTouchUpInside];
     //打电话页面

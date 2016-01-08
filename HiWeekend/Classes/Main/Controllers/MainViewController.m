@@ -18,6 +18,7 @@
 #import "ClassifyViewController.h"
 #import "GoodActivityViewController.h"
 #import "HotActivityViewController.h"
+
 @interface MainViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //全部列表数据
@@ -66,6 +67,11 @@
     [self startTimer];
     
 }
+//当主页面再次出来时，tabbar显示
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
 #pragma mark---UITableViewDataSource
 
 
@@ -110,15 +116,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
     if (indexPath.section == 0) {
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
         ActivityDetailViewController *aVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"advc"];
-        MainModel *mainModel = self.listArray[indexPath.section][indexPath.row];
         aVC.activityId = mainModel.activityId;
-
         [self.navigationController pushViewController:aVC animated:YES];
     } else {
         ThemeViewController *tVC = [[ThemeViewController alloc] init];
+        tVC.ThemeId = mainModel.activityId;
         [self.navigationController pushViewController:tVC animated:YES];
     }
 }
@@ -167,6 +173,7 @@
 //精选活动
 - (void)goodActivityButtonAction{
     GoodActivityViewController *gVC = [[GoodActivityViewController alloc] init];
+    gVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:gVC animated:YES];
 }
 
@@ -192,10 +199,13 @@
         UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
          ActivityDetailViewController *aVC = [mainSB instantiateViewControllerWithIdentifier:@"advc"];
         aVC.activityId = self.adArray[btn.tag - 100][@"id"];
+        
         [self.navigationController pushViewController:aVC animated:YES];
     } else {
-        HotActivityViewController *hVVC = [[HotActivityViewController alloc] init];
-        [self.navigationController pushViewController:hVVC animated:YES];
+        ThemeViewController *tVC = [[ThemeViewController alloc] init];
+        tVC.ThemeId = self.adArray[btn.tag - 100][@"id"];
+        [self.navigationController pushViewController:tVC animated:YES];
+        
     }
 
 }
@@ -319,15 +329,6 @@
     return _btn2;
 }
 #pragma mark----首页轮播图
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-//    //第一步：获取scrollView页面的宽度
-//    CGFloat pageWidth = self.scrollView.frame.size.width;
-//    //第二步：获取scrollView停止时候的偏移量
-//    CGPoint offset = self.scrollView.contentOffset;
-//    //第三步：通过偏移量计算当前页数
-//    NSInteger pageNum = offset.x / pageWidth;
-//    self.pageControl.currentPage = pageNum;
-//}
 
 - (void)pageSelectAction:(UIPageControl *)pageControl{
     NSInteger pageNum = pageControl.currentPage;

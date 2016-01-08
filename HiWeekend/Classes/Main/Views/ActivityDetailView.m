@@ -8,6 +8,7 @@
 
 #import "ActivityDetailView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+
 @interface ActivityDetailView ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *HeadImageView;
@@ -45,7 +46,7 @@
     NSString *endTime = [HWtools getDataFromString:dataDic[@"new_start_date"]];
     self.activityTimeLable.text = [NSString stringWithFormat:@" 正在进行：%@-%@", startTime, endTime];
     //活动详情
-    [self drawContentWithArray:dataDic[@"content"]];
+    
     //温馨提示
     [self showReminderWithString:dataDic[@"reminder"]];
     
@@ -111,7 +112,7 @@
     reminderLabel.numberOfLines = 0;
     reminderLabel.font = [UIFont systemFontOfSize:15.0];
     [self.mainScrollView addSubview:reminderLabel];
-    self.mainScrollView.contentSize = CGSizeMake(kWidth, reminderLabel.bottom + 80);
+    self.mainScrollView.contentSize = CGSizeMake(kWidth, reminderLabel.bottom + 30);
 }
 
 
