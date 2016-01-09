@@ -19,6 +19,7 @@
     self.themeView = [[ActivityThemeView alloc] initWithFrame:self.view.frame];
     self.view = self.themeView;
     [self getModel];
+    self.tabBarController.tabBar.hidden = YES;
 }
 
 - (void)viewDidLoad {

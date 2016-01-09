@@ -10,6 +10,7 @@
 #import "PullingRefreshTableView.h"
 #import "GoodActivityTableViewCell.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
+#import "ActivityDetailViewController.h"
 @interface GoodActivityViewController ()<UITableViewDataSource, UITableViewDelegate, PullingRefreshTableViewDelegate>
 {
     NSInteger _pageCount;
@@ -20,9 +21,7 @@
 @end
 
 @implementation GoodActivityViewController
-//- (void)loadView{
-//    [self loadData];
-//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,14 +34,12 @@
     //    [self.tableView setHeaderOnly:YES];          //只有上拉刷新
     //    [self.tableView setFooterOnly:YES];          //只有下拉刷新
     [self.tableView registerNib:[UINib nibWithNibName:@"GoodActivityTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    self.acData = [NSMutableArray new];
+    self.tabBarController.tabBar.hidden = YES;
+
 }
 
-
-
-
-
 #pragma mark--UITableViewDataSource
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.acData.count;
 }
@@ -54,8 +51,14 @@
 
 #pragma mark--UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    UIStoryboard *mainSB = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    ActivityDetailViewController *aVC = [mainSB instantiateViewControllerWithIdentifier:@"advc"];
+    GoodActivityModel *model = self.acData[indexPath.row];
+    aVC.activityId = model.activityId;
+    [self.navigationController pushViewController:aVC animated:YES];
+
 }
+
 #pragma mark---PullingRefreshTableViewDelegate
 //tableView上拉刷新时调用
 - (void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView{
@@ -68,29 +71,30 @@
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
     _pageCount += 1;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
-    
 }
 //加载数据
 - (void)loadData{
-    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:[NSString stringWithFormat:@"%@&page=%ld", kGoodActivity, _pageCount] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *dic = responseObject;
+        NSString *code = dic[@"code"];
+        NSString *status = dic[@"status"];
+        if ([code integerValue] == 0 && [status isEqualToString:@"success"]) {
         NSArray *array = dic[@"success"][@"acData"];
-        self.acData = [NSMutableArray new];
         for (NSDictionary *dic in array) {
             GoodActivityModel *model = [[GoodActivityModel alloc] initWithDictionary:dic];
             [self.acData addObject:model];
         }
+        [self.tableView reloadData];
+    }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZLLog(@"error = %@", error);
     }];
     [self.tableView tableViewDidFinishedLoading];
     self.tableView.reachedTheEnd = NO;
-    [self.tableView reloadData];
 }
 //刷新完成时间
 - (NSDate *)pullingTableViewRefreshingFinishedDate{

@@ -173,7 +173,6 @@
 //精选活动
 - (void)goodActivityButtonAction{
     GoodActivityViewController *gVC = [[GoodActivityViewController alloc] init];
-    gVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:gVC animated:YES];
 }
 

@@ -16,8 +16,6 @@
 		7A0C553E1C3FA3AD003C764F /* GoodActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0C553C1C3FA3AD003C764F /* GoodActivityTableViewCell.xib */; };
 		7A0C55411C3FBE51003C764F /* GoodActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C55401C3FBE51003C764F /* GoodActivityModel.m */; };
 		7A0C55431C3FC327003C764F /* GoodActivity in Resources */ = {isa = PBXBuildFile; fileRef = 7A0C55421C3FC327003C764F /* GoodActivity */; };
-		7A0C554A1C3FED4F003C764F /* HotActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C55481C3FED4F003C764F /* HotActivityTableViewCell.m */; };
-		7A0C554B1C3FED4F003C764F /* HotActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0C55491C3FED4F003C764F /* HotActivityTableViewCell.xib */; };
 		7A0E70D81C3CBBF200D825CC /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70D71C3CBBF200D825CC /* SelectCityViewController.m */; };
 		7A0E70DB1C3CBD9100D825CC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70DA1C3CBD9100D825CC /* SearchViewController.m */; };
 		7A0E70DE1C3CBE7000D825CC /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70DD1C3CBE7000D825CC /* ActivityDetailViewController.m */; };
@@ -63,9 +61,6 @@
 		7A0C553F1C3FBE51003C764F /* GoodActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodActivityModel.h; sourceTree = "<group>"; };
 		7A0C55401C3FBE51003C764F /* GoodActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodActivityModel.m; sourceTree = "<group>"; };
 		7A0C55421C3FC327003C764F /* GoodActivity */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoodActivity; sourceTree = "<group>"; };
-		7A0C55471C3FED4F003C764F /* HotActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotActivityTableViewCell.h; sourceTree = "<group>"; };
-		7A0C55481C3FED4F003C764F /* HotActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotActivityTableViewCell.m; sourceTree = "<group>"; };
-		7A0C55491C3FED4F003C764F /* HotActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotActivityTableViewCell.xib; sourceTree = "<group>"; };
 		7A0E70D61C3CBBF200D825CC /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
 		7A0E70D71C3CBBF200D825CC /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
 		7A0E70D91C3CBD9100D825CC /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -298,9 +293,6 @@
 				7A0C553A1C3FA3AD003C764F /* GoodActivityTableViewCell.h */,
 				7A0C553B1C3FA3AD003C764F /* GoodActivityTableViewCell.m */,
 				7A0C553C1C3FA3AD003C764F /* GoodActivityTableViewCell.xib */,
-				7A0C55471C3FED4F003C764F /* HotActivityTableViewCell.h */,
-				7A0C55481C3FED4F003C764F /* HotActivityTableViewCell.m */,
-				7A0C55491C3FED4F003C764F /* HotActivityTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,7 +433,6 @@
 				7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */,
 				7A1461DF1C3A50C3009ECF24 /* DiscoverStoryboard.storyboard in Resources */,
 				7AAA6B081C3B9D640030B5E5 /* main in Resources */,
-				7A0C554B1C3FED4F003C764F /* HotActivityTableViewCell.xib in Resources */,
 				7A0C55381C3F9E1B003C764F /* blueArrowDown.png in Resources */,
 				7A1461B11C3A1C3A009ECF24 /* Assets.xcassets in Resources */,
 				7A1461E11C3A50CF009ECF24 /* MainStoryboard.storyboard in Resources */,
@@ -514,7 +505,6 @@
 				7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */,
 				7A0E70E71C3CC06200D825CC /* GoodActivityViewController.m in Sources */,
 				7A5D0B5F1C3E8B23002D4089 /* HWtools.m in Sources */,
-				7A0C554A1C3FED4F003C764F /* HotActivityTableViewCell.m in Sources */,
 				7A5D0B601C3E8B23002D4089 /* UIView+Extension.m in Sources */,
 				7A1461AF1C3A1C3A009ECF24 /* AppDelegate.m in Sources */,
 				7A5D0B611C3E8B23002D4089 /* UIViewController+Common.m in Sources */,

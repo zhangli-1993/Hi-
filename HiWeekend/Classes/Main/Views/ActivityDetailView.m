@@ -46,7 +46,7 @@
     NSString *endTime = [HWtools getDataFromString:dataDic[@"new_start_date"]];
     self.activityTimeLable.text = [NSString stringWithFormat:@" 正在进行：%@-%@", startTime, endTime];
     //活动详情
-    
+    [self drawContentWithArray:dataDic[@"content"]];
     //温馨提示
     [self showReminderWithString:dataDic[@"reminder"]];
     
