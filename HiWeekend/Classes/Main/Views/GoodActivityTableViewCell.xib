@@ -44,9 +44,11 @@
                         <color key="textColor" red="0.046900699009999998" green="0.72972347859999998" blue="0.99545127470000005" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-XL-aWg">
-                        <rect key="frame" x="259" y="57" width="46" height="25"/>
-                        <state key="normal" title="Button"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDd-XL-aWg">
+                        <rect key="frame" x="262" y="60" width="50" height="25"/>
+                        <state key="normal" title="Button" image="list_like_heart">
+                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                     </button>
                 </subviews>
             </tableViewCellContentView>
@@ -63,5 +65,6 @@
     </objects>
     <resources>
         <image name="age_bg" width="25" height="12"/>
+        <image name="list_like_heart" width="25" height="25"/>
     </resources>
 </document>

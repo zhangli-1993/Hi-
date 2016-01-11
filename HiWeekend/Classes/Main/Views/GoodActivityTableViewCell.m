@@ -32,7 +32,7 @@
     self.activityTitleLabel.text = GAModel.title;
     self.activityPriceLabel.text = GAModel.price;
     self.ageLabel.text = GAModel.age;
-    //[self.loveCountButton setTitle:GAModel.counts forState:UIControlStateNormal];
+    [self.loveCountButton setTitle:[NSString stringWithFormat:@"%@", GAModel.counts] forState:UIControlStateNormal];
     
 }
 

@@ -168,11 +168,13 @@
 //分类列表
 - (void)mainActivityButtonAction:(UIButton *)btn{
     ClassifyViewController *cVVC = [[ClassifyViewController alloc] init];
+    cVVC.classifyListType = btn.tag - 100 + 1;
     [self.navigationController pushViewController:cVVC animated:YES];
 }
 //精选活动
 - (void)goodActivityButtonAction{
     GoodActivityViewController *gVC = [[GoodActivityViewController alloc] init];
+    
     [self.navigationController pushViewController:gVC animated:YES];
 }
 

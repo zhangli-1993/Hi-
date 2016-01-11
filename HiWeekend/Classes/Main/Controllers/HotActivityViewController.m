@@ -11,6 +11,7 @@
 #import "PullingRefreshTableView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "ThemeViewController.h"
+#import "HotActivityTableViewCell.h"
 @interface HotActivityViewController ()<PullingRefreshTableViewDelegate, UITableViewDataSource, UITableViewDelegate>
 {
     NSInteger _page;
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) PullingRefreshTableView *tableView;
 @property (nonatomic, assign) BOOL refreshing;
 @property (nonatomic, strong) NSMutableArray *rcData;
+
 
 @end
 
@@ -31,8 +33,10 @@
     //如果整张视图只想让他显示4行的话，后面就变成空白
     //self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView launchRefreshing];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HotActivityTableViewCell" bundle:nil] forCellReuseIdentifier:@"zzz"];
     self.rcData = [NSMutableArray new];
     self.tabBarController.tabBar.hidden = YES;
+
 }
 #pragma mark--UITableViewDataSource
 
@@ -40,14 +44,10 @@
     return self.rcData.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *str = @"123";
-    UITableViewCell *Cell = [self.tableView dequeueReusableCellWithIdentifier:str];
-    if (Cell == nil) {
-        Cell = [[UITableViewCell alloc] initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:str];
-    }
-    UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, kWidth - 10, 200)];
-    [imageview sd_setImageWithURL:[NSURL URLWithString:self.rcData[indexPath.row][@"img"]] placeholderImage:nil];
-    [Cell addSubview:imageview];
+    HotActivityTableViewCell *Cell = [tableView dequeueReusableCellWithIdentifier:@"zzz" forIndexPath:indexPath];
+
+    [Cell.imageview sd_setImageWithURL:[NSURL URLWithString:self.rcData[indexPath.row][@"img"]] placeholderImage:nil];
+    [Cell.button setTitle:self.rcData[indexPath.row][@"counts"] forState:UIControlStateNormal];
     return Cell;
 }
 
@@ -68,6 +68,7 @@
 //tableView下拉刷新时调用
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
     _page += 1;
+    self.refreshing = NO;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
     
 }
@@ -84,10 +85,17 @@
         NSString *status = dic[@"status"];
         if ([code integerValue] == 0 && [status isEqualToString:@"success"]) {
             NSArray *array = dic[@"success"][@"rcData"];
+            if (self.refreshing) {
+                if (self.rcData.count > 0) {
+                    [self.rcData removeAllObjects];
+                }
+            }
             for (NSDictionary *dic in array) {
                 [self.rcData addObject:dic];
             }
             [self.tableView reloadData];
+        } else {
+            
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZLLog(@"error = %@", error);

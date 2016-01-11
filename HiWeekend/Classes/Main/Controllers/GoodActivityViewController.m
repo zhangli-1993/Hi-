@@ -70,6 +70,7 @@
 //tableView下拉刷新时调用
 - (void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView{
     _pageCount += 1;
+    self.refreshing = NO;
     [self performSelector:@selector(loadData) withObject:nil afterDelay:1.0];
 }
 //加载数据
@@ -84,12 +85,20 @@
         NSString *status = dic[@"status"];
         if ([code integerValue] == 0 && [status isEqualToString:@"success"]) {
         NSArray *array = dic[@"success"][@"acData"];
+            //下拉刷新需要移除数组中的数据
+        if (self.refreshing) {
+                if (self.acData.count > 0) {
+                    [self.acData removeAllObjects];
+                }
+            }
         for (NSDictionary *dic in array) {
             GoodActivityModel *model = [[GoodActivityModel alloc] initWithDictionary:dic];
             [self.acData addObject:model];
         }
         [self.tableView reloadData];
-    }
+        } else {
+            
+        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZLLog(@"error = %@", error);
     }];
