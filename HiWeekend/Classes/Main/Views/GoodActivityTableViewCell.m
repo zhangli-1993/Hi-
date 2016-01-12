@@ -29,7 +29,10 @@
 }
 - (void)setGAModel:(GoodActivityModel *)GAModel{
     [self.headImageView sd_setImageWithURL:[NSURL URLWithString:GAModel.image] placeholderImage:nil];
+    self.headImageView.layer.cornerRadius = 20;
+    self.headImageView.clipsToBounds = YES;
     self.activityTitleLabel.text = GAModel.title;
+    self.activityTitleLabel.numberOfLines = 0;
     self.activityPriceLabel.text = GAModel.price;
     self.ageLabel.text = GAModel.age;
     [self.loveCountButton setTitle:[NSString stringWithFormat:@"%@", GAModel.counts] forState:UIControlStateNormal];

@@ -23,6 +23,8 @@
 		7A0E70E41C3CBFEE00D825CC /* ClassifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70E31C3CBFEE00D825CC /* ClassifyViewController.m */; };
 		7A0E70E71C3CC06200D825CC /* GoodActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70E61C3CC06200D825CC /* GoodActivityViewController.m */; };
 		7A0E70EA1C3CC06F00D825CC /* HotActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70E91C3CC06F00D825CC /* HotActivityViewController.m */; };
+		7A1095AD1C449F6700311EB0 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7A1095AA1C449F6700311EB0 /* ProgressHUD.bundle */; };
+		7A1095AE1C449F6700311EB0 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1095AC1C449F6700311EB0 /* ProgressHUD.m */; };
 		7A11F0F21C43420300E507FB /* HotActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A11F0F01C43420300E507FB /* HotActivityTableViewCell.m */; };
 		7A11F0F31C43420300E507FB /* HotActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A11F0F11C43420300E507FB /* HotActivityTableViewCell.xib */; };
 		7A11F0FD1C438FE000E507FB /* VOContentLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A11F0F61C438FE000E507FB /* VOContentLayer.m */; };
@@ -49,6 +51,10 @@
 		7A5D0B5F1C3E8B23002D4089 /* HWtools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B591C3E8B23002D4089 /* HWtools.m */; };
 		7A5D0B601C3E8B23002D4089 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B5C1C3E8B23002D4089 /* UIView+Extension.m */; };
 		7A5D0B611C3E8B23002D4089 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B5E1C3E8B23002D4089 /* UIViewController+Common.m */; };
+		7A728FF71C44FA7B00FF1C84 /* DiscoveryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A728FF51C44FA7B00FF1C84 /* DiscoveryTableViewCell.m */; };
+		7A728FF81C44FA7B00FF1C84 /* DiscoveryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A728FF61C44FA7B00FF1C84 /* DiscoveryTableViewCell.xib */; };
+		7A7290751C450F2100FF1C84 /* discover in Resources */ = {isa = PBXBuildFile; fileRef = 7A7290741C450F2100FF1C84 /* discover */; };
+		7A7290781C450F4F00FF1C84 /* DiscoveryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7290771C450F4F00FF1C84 /* DiscoveryModel.m */; };
 		7AAA6B081C3B9D640030B5E5 /* main in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA6B071C3B9D640030B5E5 /* main */; };
 		7AAA6B0B1C3BA0660030B5E5 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */; };
 		7AAB91461C3D1B030015E05A /* activityDetail in Resources */ = {isa = PBXBuildFile; fileRef = 7AAB91451C3D1B030015E05A /* activityDetail */; };
@@ -85,6 +91,9 @@
 		7A0E70E61C3CC06200D825CC /* GoodActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodActivityViewController.m; sourceTree = "<group>"; };
 		7A0E70E81C3CC06F00D825CC /* HotActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotActivityViewController.h; sourceTree = "<group>"; };
 		7A0E70E91C3CC06F00D825CC /* HotActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotActivityViewController.m; sourceTree = "<group>"; };
+		7A1095AA1C449F6700311EB0 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		7A1095AB1C449F6700311EB0 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		7A1095AC1C449F6700311EB0 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		7A11F0EF1C43420300E507FB /* HotActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotActivityTableViewCell.h; sourceTree = "<group>"; };
 		7A11F0F01C43420300E507FB /* HotActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotActivityTableViewCell.m; sourceTree = "<group>"; };
 		7A11F0F11C43420300E507FB /* HotActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HotActivityTableViewCell.xib; sourceTree = "<group>"; };
@@ -129,6 +138,12 @@
 		7A5D0B5C1C3E8B23002D4089 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		7A5D0B5D1C3E8B23002D4089 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
 		7A5D0B5E1C3E8B23002D4089 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
+		7A728FF41C44FA7B00FF1C84 /* DiscoveryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryTableViewCell.h; sourceTree = "<group>"; };
+		7A728FF51C44FA7B00FF1C84 /* DiscoveryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryTableViewCell.m; sourceTree = "<group>"; };
+		7A728FF61C44FA7B00FF1C84 /* DiscoveryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiscoveryTableViewCell.xib; sourceTree = "<group>"; };
+		7A7290741C450F2100FF1C84 /* discover */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = discover; sourceTree = "<group>"; };
+		7A7290761C450F4F00FF1C84 /* DiscoveryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryModel.h; sourceTree = "<group>"; };
+		7A7290771C450F4F00FF1C84 /* DiscoveryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoveryModel.m; sourceTree = "<group>"; };
 		7AAA6B071C3B9D640030B5E5 /* main */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main; sourceTree = "<group>"; };
 		7AAA6B091C3BA0660030B5E5 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
@@ -169,6 +184,24 @@
 			path = ../PullingRefreshTableView;
 			sourceTree = "<group>";
 		};
+		7A1095A81C449F6700311EB0 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				7A1095A91C449F6700311EB0 /* ProgressHUD */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		7A1095A91C449F6700311EB0 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7A1095AA1C449F6700311EB0 /* ProgressHUD.bundle */,
+				7A1095AB1C449F6700311EB0 /* ProgressHUD.h */,
+				7A1095AC1C449F6700311EB0 /* ProgressHUD.m */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		7A11F0F41C438FE000E507FB /* VOSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +239,7 @@
 		7A1461A91C3A1C3A009ECF24 /* HiWeekend */ = {
 			isa = PBXGroup;
 			children = (
+				7A1095A81C449F6700311EB0 /* Library */,
 				7A5D0B561C3E8B23002D4089 /* Tools */,
 				7A1461AD1C3A1C3A009ECF24 /* AppDelegate.h */,
 				7A1461AE1C3A1C3A009ECF24 /* AppDelegate.m */,
@@ -260,6 +294,9 @@
 		7A1461C91C3A4E35009ECF24 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A7290741C450F2100FF1C84 /* discover */,
+				7A7290761C450F4F00FF1C84 /* DiscoveryModel.h */,
+				7A7290771C450F4F00FF1C84 /* DiscoveryModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -268,6 +305,9 @@
 			isa = PBXGroup;
 			children = (
 				7A1461DE1C3A50C3009ECF24 /* DiscoverStoryboard.storyboard */,
+				7A728FF41C44FA7B00FF1C84 /* DiscoveryTableViewCell.h */,
+				7A728FF51C44FA7B00FF1C84 /* DiscoveryTableViewCell.m */,
+				7A728FF61C44FA7B00FF1C84 /* DiscoveryTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -480,10 +520,12 @@
 			files = (
 				7A090E571C3F5D4B00614565 /* activityTheme in Resources */,
 				7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */,
+				7A7290751C450F2100FF1C84 /* discover in Resources */,
 				7A1461DF1C3A50C3009ECF24 /* DiscoverStoryboard.storyboard in Resources */,
 				7AAA6B081C3B9D640030B5E5 /* main in Resources */,
 				7A11F0F31C43420300E507FB /* HotActivityTableViewCell.xib in Resources */,
 				7A0C55381C3F9E1B003C764F /* blueArrowDown.png in Resources */,
+				7A728FF81C44FA7B00FF1C84 /* DiscoveryTableViewCell.xib in Resources */,
 				7A11F1081C43A89500E507FB /* typeid23.plist in Resources */,
 				7A1461B11C3A1C3A009ECF24 /* Assets.xcassets in Resources */,
 				7A1461E11C3A50CF009ECF24 /* MainStoryboard.storyboard in Resources */,
@@ -493,6 +535,7 @@
 				7A0C55371C3F9E1B003C764F /* blueArrow.png in Resources */,
 				7A11F1041C43A88E00E507FB /* typeid6.plist in Resources */,
 				7A11F1061C43A89200E507FB /* typeud21.plist in Resources */,
+				7A1095AD1C449F6700311EB0 /* ProgressHUD.bundle in Resources */,
 				7A0C55431C3FC327003C764F /* GoodActivity in Resources */,
 				7AAB91461C3D1B030015E05A /* activityDetail in Resources */,
 				7A1461E31C3A50E0009ECF24 /* MineStoryboard.storyboard in Resources */,
@@ -564,12 +607,15 @@
 				7A1461AF1C3A1C3A009ECF24 /* AppDelegate.m in Sources */,
 				7A5D0B611C3E8B23002D4089 /* UIViewController+Common.m in Sources */,
 				7A1461D71C3A4E35009ECF24 /* DiscoverViewController.m in Sources */,
+				7A1095AE1C449F6700311EB0 /* ProgressHUD.m in Sources */,
 				7A0C55411C3FBE51003C764F /* GoodActivityModel.m in Sources */,
+				7A7290781C450F4F00FF1C84 /* DiscoveryModel.m in Sources */,
 				7A1461D91C3A4E35009ECF24 /* MineViewController.m in Sources */,
 				7A11F0FF1C438FE000E507FB /* VOSegment.m in Sources */,
 				7A0E70DE1C3CBE7000D825CC /* ActivityDetailViewController.m in Sources */,
 				7A090E5A1C3F5ED400614565 /* ActivityThemeView.m in Sources */,
 				7A0E70DB1C3CBD9100D825CC /* SearchViewController.m in Sources */,
+				7A728FF71C44FA7B00FF1C84 /* DiscoveryTableViewCell.m in Sources */,
 				7A0C55391C3F9E1B003C764F /* PullingRefreshTableView.m in Sources */,
 				7A11F0FD1C438FE000E507FB /* VOContentLayer.m in Sources */,
 				7A0E70E11C3CBF3F00D825CC /* ThemeViewController.m in Sources */,
