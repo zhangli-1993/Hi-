@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [self.view addSubview:self.tableView];
+    self.navigationController.navigationBar.barTintColor = kColor;
     //edgesForExtendedLayout默认的值是UIRectEdgeAll就是全部布局的意思
     self.edgesForExtendedLayout = UIRectEdgeNone;
     

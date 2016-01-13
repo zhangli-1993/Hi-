@@ -34,7 +34,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="78h-HK-6rs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.32156863810000003" green="0.8078432083" blue="0.86274516580000005" alpha="1" colorSpace="deviceRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

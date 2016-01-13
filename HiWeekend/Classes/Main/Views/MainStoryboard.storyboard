@@ -182,7 +182,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="3yZ-Ls-ZR4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.32156863808631897" green="0.80784320831298828" blue="0.86274516582489014" alpha="1" colorSpace="deviceRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>

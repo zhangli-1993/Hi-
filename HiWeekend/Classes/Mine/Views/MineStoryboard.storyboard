@@ -8,15 +8,14 @@
         <!--我的-->
         <scene sceneID="TYH-M2-59A">
             <objects>
-                <viewController id="vnc-s2-Rre" sceneMemberID="viewController">
+                <viewController id="vnc-s2-Rre" customClass="MineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m2z-mz-lS8"/>
                         <viewControllerLayoutGuide type="bottom" id="Rpd-6Z-VAt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D6m-Ot-BIg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.5692558915" blue="0.59410891259999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="U0d-iE-Nj6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -31,7 +30,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="plP-31-Kmy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQv-OF-VAd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jQv-OF-VAd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
