@@ -47,6 +47,12 @@
 		7A1461E31C3A50E0009ECF24 /* MineStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E21C3A50E0009ECF24 /* MineStoryboard.storyboard */; };
 		7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */; };
 		7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */; };
+		7A4E615D1C4779D000DA8ACE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4E61591C4779D000DA8ACE /* libWeChatSDK.a */; };
+		7A4E615F1C477A2C00DA8ACE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4E615E1C477A2C00DA8ACE /* libsqlite3.0.tbd */; };
+		7A4E61611C477A3E00DA8ACE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4E61601C477A3E00DA8ACE /* libc++.tbd */; };
+		7A4E61631C4784A100DA8ACE /* 007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A4E61621C4784A100DA8ACE /* 007.jpg */; };
+		7A4EB8531C4740E700B6A5B1 /* ShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4EB8521C4740E700B6A5B1 /* ShareView.m */; };
+		7A4EB8591C474EC200B6A5B1 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A4EB8581C474EC200B6A5B1 /* ShareViewController.m */; };
 		7A5D0B4C1C3E10FC002D4089 /* ActivityDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */; };
 		7A5D0B5F1C3E8B23002D4089 /* HWtools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B591C3E8B23002D4089 /* HWtools.m */; };
 		7A5D0B601C3E8B23002D4089 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D0B5C1C3E8B23002D4089 /* UIView+Extension.m */; };
@@ -142,6 +148,16 @@
 		7A1461E41C3A766B009ECF24 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		7A4E61591C4779D000DA8ACE /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		7A4E615B1C4779D000DA8ACE /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		7A4E615C1C4779D000DA8ACE /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		7A4E615E1C477A2C00DA8ACE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7A4E61601C477A3E00DA8ACE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7A4E61621C4784A100DA8ACE /* 007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 007.jpg; sourceTree = "<group>"; };
+		7A4EB8511C4740E700B6A5B1 /* ShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareView.h; sourceTree = "<group>"; };
+		7A4EB8521C4740E700B6A5B1 /* ShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareView.m; sourceTree = "<group>"; };
+		7A4EB8571C474EC200B6A5B1 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		7A4EB8581C474EC200B6A5B1 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		7A5D0B4A1C3E10FC002D4089 /* ActivityDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailView.h; sourceTree = "<group>"; };
 		7A5D0B4B1C3E10FC002D4089 /* ActivityDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailView.m; sourceTree = "<group>"; };
 		7A5D0B571C3E8B23002D4089 /* HWHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHeader.h; sourceTree = "<group>"; };
@@ -194,6 +210,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4E61611C477A3E00DA8ACE /* libc++.tbd in Frameworks */,
+				7A4E615F1C477A2C00DA8ACE /* libsqlite3.0.tbd in Frameworks */,
 				7ACB2B001C4650A60099D8AC /* libsqlite3.tbd in Frameworks */,
 				7ACB2AFE1C4650930099D8AC /* libz.tbd in Frameworks */,
 				7ACB2AFC1C4650880099D8AC /* CoreGraphics.framework in Frameworks */,
@@ -208,6 +226,7 @@
 				7ACB2ADB1C462C070099D8AC /* MessageUI.framework in Frameworks */,
 				7ACB2AE91C464F4A0099D8AC /* libWeiboSDK.a in Frameworks */,
 				7D4C24FAB1E850F51F24D29E /* libPods.a in Frameworks */,
+				7A4E615D1C4779D000DA8ACE /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +309,7 @@
 		7A1461A91C3A1C3A009ECF24 /* HiWeekend */ = {
 			isa = PBXGroup;
 			children = (
+				7A4E61621C4784A100DA8ACE /* 007.jpg */,
 				7A1095A81C449F6700311EB0 /* Library */,
 				7A5D0B561C3E8B23002D4089 /* Tools */,
 				7A1461AD1C3A1C3A009ECF24 /* AppDelegate.h */,
@@ -451,6 +471,8 @@
 			children = (
 				7A1461D31C3A4E35009ECF24 /* MineViewController.h */,
 				7A1461D41C3A4E35009ECF24 /* MineViewController.m */,
+				7A4EB8571C474EC200B6A5B1 /* ShareViewController.h */,
+				7A4EB8581C474EC200B6A5B1 /* ShareViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -466,6 +488,8 @@
 			isa = PBXGroup;
 			children = (
 				7A1461E21C3A50E0009ECF24 /* MineStoryboard.storyboard */,
+				7A4EB8511C4740E700B6A5B1 /* ShareView.h */,
+				7A4EB8521C4740E700B6A5B1 /* ShareView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -473,6 +497,7 @@
 		7A1461DA1C3A4E3F009ECF24 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				7A4E61581C4779D000DA8ACE /* SDK1.6.2 */,
 				7ACB2ADC1C464F4A0099D8AC /* libWeiboSDK */,
 				7A11F0F41C438FE000E507FB /* VOSegmentedControl */,
 			);
@@ -485,6 +510,16 @@
 				7A0C55321C3F9E1B003C764F /* PullingRefreshTableView */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		7A4E61581C4779D000DA8ACE /* SDK1.6.2 */ = {
+			isa = PBXGroup;
+			children = (
+				7A4E61591C4779D000DA8ACE /* libWeChatSDK.a */,
+				7A4E615B1C4779D000DA8ACE /* WXApi.h */,
+				7A4E615C1C4779D000DA8ACE /* WXApiObject.h */,
+			);
+			path = SDK1.6.2;
 			sourceTree = "<group>";
 		};
 		7A5D0B561C3E8B23002D4089 /* Tools */ = {
@@ -524,6 +559,8 @@
 		B777CC04BED718B6D38A8A85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A4E61601C477A3E00DA8ACE /* libc++.tbd */,
+				7A4E615E1C477A2C00DA8ACE /* libsqlite3.0.tbd */,
 				7ACB2AFF1C4650A60099D8AC /* libsqlite3.tbd */,
 				7ACB2AFD1C4650930099D8AC /* libz.tbd */,
 				7ACB2AFB1C4650880099D8AC /* CoreGraphics.framework */,
@@ -575,6 +612,7 @@
 				TargetAttributes = {
 					7A1461A61C3A1C3A009ECF24 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 4JS35T698G;
 					};
 				};
 			};
@@ -623,6 +661,7 @@
 				7ACB2AEA1C464F4A0099D8AC /* WeiboSDK.bundle in Resources */,
 				7AAB91461C3D1B030015E05A /* activityDetail in Resources */,
 				7A1461E31C3A50E0009ECF24 /* MineStoryboard.storyboard in Resources */,
+				7A4E61631C4784A100DA8ACE /* 007.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +722,7 @@
 			files = (
 				7A0E70E41C3CBFEE00D825CC /* ClassifyViewController.m in Sources */,
 				7A0E70EA1C3CC06F00D825CC /* HotActivityViewController.m in Sources */,
+				7A4EB8591C474EC200B6A5B1 /* ShareViewController.m in Sources */,
 				7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */,
 				7A0E70E71C3CC06200D825CC /* GoodActivityViewController.m in Sources */,
 				7A5D0B5F1C3E8B23002D4089 /* HWtools.m in Sources */,
@@ -699,6 +739,7 @@
 				7A0E70DE1C3CBE7000D825CC /* ActivityDetailViewController.m in Sources */,
 				7A090E5A1C3F5ED400614565 /* ActivityThemeView.m in Sources */,
 				7A0E70DB1C3CBD9100D825CC /* SearchViewController.m in Sources */,
+				7A4EB8531C4740E700B6A5B1 /* ShareView.m in Sources */,
 				7A728FF71C44FA7B00FF1C84 /* DiscoveryTableViewCell.m in Sources */,
 				7A0C55391C3F9E1B003C764F /* PullingRefreshTableView.m in Sources */,
 				7A11F0FD1C438FE000E507FB /* VOContentLayer.m in Sources */,
@@ -813,6 +854,8 @@
 			baseConfigurationReference = B7EFB4AC9C1EA88504B16BCE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeekend/Tools/pch.pch";
 				INFOPLIST_FILE = HiWeekend/Info.plist;
@@ -821,9 +864,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HiWeekend/Library/libWeiboSDK",
+					"$(PROJECT_DIR)/HiWeekend/Library/SDK1.6.2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zhangli.HiWeekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -832,6 +878,8 @@
 			baseConfigurationReference = 4AA258B7DAAADBF3CED53B63 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeekend/Tools/pch.pch";
 				INFOPLIST_FILE = HiWeekend/Info.plist;
@@ -840,9 +888,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HiWeekend/Library/libWeiboSDK",
+					"$(PROJECT_DIR)/HiWeekend/Library/SDK1.6.2",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zhangli.HiWeekend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

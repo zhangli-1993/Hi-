@@ -11,7 +11,8 @@
 #import "DiscoverViewController.h"
 #import "MineViewController.h"
 #import "WeiboSDK.h"
-@interface AppDelegate ()<WeiboSDKDelegate>
+#import "WXApi.h"
+@interface AppDelegate ()<WeiboSDKDelegate, WXApiDelegate>
 
 @property (strong, nonatomic) NSString *wbRefreshToken;
 @property (strong, nonatomic) NSString *wbCurrentUserID;
@@ -27,6 +28,7 @@
     // Override point for customization after application launch.
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
+    [WXApi registerApp:kWXAppID];
 
     self.tab = [[UITabBarController alloc] init];
     self.tab.tabBar.barTintColor = [UIColor whiteColor];
@@ -35,7 +37,6 @@
     //主页
     UIStoryboard *main = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
     UINavigationController *mainNav = main.instantiateInitialViewController;
-    //mainNav.tabBarItem.title = @"主页";
     mainNav.tabBarItem.image = [UIImage imageNamed:@"ft_home_normal_ic"];
     mainNav.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     //tabbar设置选中图片按照原始状态显示
@@ -46,7 +47,6 @@
     //发现
     UIStoryboard *discovery = [UIStoryboard storyboardWithName:@"DiscoverStoryboard" bundle:nil];
     UINavigationController *nav2 = discovery.instantiateInitialViewController;
-    //nav2.tabBarItem.title = @"发现";
     nav2.tabBarItem.image = [UIImage imageNamed:@"ft_found_normal_ic"];
     nav2.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     UIImage *image1 = [UIImage imageNamed:@"ft_found_selected_ic"];
@@ -76,10 +76,22 @@
 #pragma mark---微博分享
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
 }
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
     return [WeiboSDK handleOpenURL:url delegate:self];
+    return [WXApi handleOpenURL:url delegate:self];
 }
+
+
+- (void)onReq:(BaseReq *)req{
+    
+}
+- (void)onResp:(BaseResp *)resp{
+    
+}
+
+
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
     
 }

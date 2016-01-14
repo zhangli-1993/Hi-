@@ -12,13 +12,16 @@
 #import "ProgressHUD.h"
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
+#import "ShareView.h"
+
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, WBHttpRequestDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *headImageBtn;
 @property (nonatomic, strong) NSArray *imageArray;
 @property (nonatomic, strong) NSMutableArray *titleArray;
 @property (nonatomic, strong) UILabel *nikeNameLabel;
-@property (nonatomic, strong) UIView *shareView;
+@property (nonatomic, strong) ShareView *shareView;
+
 @end
 
 @implementation MineViewController
@@ -181,68 +184,9 @@
 }
 
 - (void)share{
-    UIWindow *window = [[UIApplication sharedApplication].delegate window];
-    self.shareView = [[UIView alloc] initWithFrame:CGRectMake(0, kHeight - 200, kWidth, 200)];
-    self.shareView.backgroundColor = kColor;
-    [window addSubview:self.shareView];
-    [UIWindow animateWithDuration:1.0 animations:^{
-        //微博
-        UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn1.frame = CGRectMake(50, 40, 76, 76);
-        [btn1 setImage:[UIImage imageNamed:@"share_weibi"] forState:UIControlStateNormal];
-        [btn1 addTarget:self action:@selector(weiboShare) forControlEvents:UIControlEventTouchUpInside];
-        [self.shareView addSubview:btn1];
-        //朋友圈
-        UIButton *btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn2.frame = CGRectMake(150, 40, 76, 76);
-        [btn2 setImage:[UIImage imageNamed:@"share_weibi"] forState:UIControlStateNormal];
-        [btn2 addTarget:self action:@selector(friendShare) forControlEvents:UIControlEventTouchUpInside];
-        [self.shareView addSubview:btn2];
-        //微信
-        UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn3.frame = CGRectMake(250, 40, 76, 76);
-        [btn3 setImage:[UIImage imageNamed:@"share_weixin"] forState:UIControlStateNormal];
-        [btn3 addTarget:self action:@selector(weixinShare) forControlEvents:UIControlEventTouchUpInside];
-        [self.shareView addSubview:btn3];
-        UIButton *removebtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        removebtn.frame = CGRectMake(80, 120, kWidth - 160, 44);
-        [removebtn setTitle:@"取消" forState:UIControlStateNormal];
-        [removebtn addTarget:self action:@selector(returnMine) forControlEvents:UIControlEventTouchUpInside];
-        [self.shareView addSubview:removebtn];
-    }];
-    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [WeiboSDK logOutWithToken:myDelegate.wbtoken delegate:self withTag:@"user1"];
-
+    self.shareView = [[ShareView alloc] init];
 }
-- (void)returnMine{
-    self.shareView.hidden = YES;
-}
-- (void)weiboShare{
-    self.shareView.hidden = YES;
-    AppDelegate *myDelegate =(AppDelegate*)[[UIApplication sharedApplication] delegate];
-     WBAuthorizeRequest *request = [WBAuthorizeRequest request];
-    request.redirectURI = kRedirectURL;
-    request.scope = @"all";
-    request.userInfo = @{@"SSO_From":@"MineViewController", @"Other_Info_1": [NSNumber numberWithInt:123], @"Other_Info_2": @[@"obj1", @"obj2"], @"Other_Info_3":@{@"key1":@"obj1",@"key2":@"obj2"}};
-    WBSendMessageToWeiboRequest *request1 = [WBSendMessageToWeiboRequest requestWithMessage:[self messageToShare]authInfo:request access_token:myDelegate.wbtoken];
-    request1.userInfo = @{@"ShareMessageFrom":@"MineViewController", @"Other_Info_1": [NSNumber numberWithInt:123], @"Other_Info_2": @[@"obj1", @"obj2"], @"Other_Info_3":@{@"key1":@"obj1",@"key2":@"obj2"}};
-    [WeiboSDK sendRequest:request1];
-//    WBProvideMessageForWeiboResponse *reponse = [WBProvideMessageForWeiboResponse responseWithMessage:[self messageToShare]];
-//    [WeiboSDK sendResponse:reponse];
-}
-- (WBMessageObject *)messageToShare{
-    WBMessageObject *message = [WBMessageObject message];
-    message.text = @"一条微博";
-    return message;
-}
-
-
-- (void)friendShare{
     
-}
-- (void)weixinShare{
-    
-}
 #pragma mark---WBHttpRequestDelegate
 - (void)request:(WBHttpRequest *)request didFinishLoadingWithResult:(NSString *)result{
     
