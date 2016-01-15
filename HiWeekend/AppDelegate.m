@@ -12,6 +12,7 @@
 #import "MineViewController.h"
 #import "WeiboSDK.h"
 #import "WXApi.h"
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()<WeiboSDKDelegate, WXApiDelegate>
 
 @property (strong, nonatomic) NSString *wbRefreshToken;
@@ -29,6 +30,7 @@
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kAppKey];
     [WXApi registerApp:kWXAppID];
+    [Bmob registerWithAppKey:kBmobKey];
 
     self.tab = [[UITabBarController alloc] init];
     self.tab.tabBar.barTintColor = [UIColor whiteColor];

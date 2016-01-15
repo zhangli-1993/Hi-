@@ -41,6 +41,7 @@ typedef NS_ENUM(NSInteger, ClassifyListType) {
 //微信分享
 #define kWXAppID @"wx13b85b35061dcd72"
 #define kWXAppSecret @"4dd040c3fa1adf3867fd56be90a29116"
-
+//bmob
+#define kBmobKey @"dca2bc975df99b707aa0f7b3690e3dd6"
 
 #endif /* HWHeader_h */

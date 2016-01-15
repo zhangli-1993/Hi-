@@ -35,6 +35,16 @@
 		7A11F1041C43A88E00E507FB /* typeid6.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A11F1031C43A88E00E507FB /* typeid6.plist */; };
 		7A11F1061C43A89200E507FB /* typeud21.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A11F1051C43A89200E507FB /* typeud21.plist */; };
 		7A11F1081C43A89500E507FB /* typeid23.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A11F1071C43A89500E507FB /* typeid23.plist */; };
+		7A126E861C48E90A00119BCC /* BmobSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E851C48E90A00119BCC /* BmobSDK.framework */; };
+		7A126E881C48E96E00119BCC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E871C48E96E00119BCC /* CoreLocation.framework */; };
+		7A126E8A1C48E99B00119BCC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E891C48E99B00119BCC /* MobileCoreServices.framework */; };
+		7A126E8C1C48E9A500119BCC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E8B1C48E9A500119BCC /* CFNetwork.framework */; };
+		7A126E8E1C48E9C500119BCC /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E8D1C48E9C500119BCC /* libz.1.2.5.tbd */; };
+		7A126E901C48E9DE00119BCC /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E8F1C48E9DE00119BCC /* libicucore.tbd */; };
+		7A126E921C48E9EC00119BCC /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E911C48E9EC00119BCC /* AVFoundation.framework */; };
+		7A126E941C48E9F800119BCC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A126E931C48E9F800119BCC /* MediaPlayer.framework */; };
+		7A126E9B1C48ED8600119BCC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A126E9A1C48ED8600119BCC /* LoginViewController.m */; };
+		7A126E9D1C48EDBD00119BCC /* login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A126E9C1C48EDBD00119BCC /* login.storyboard */; };
 		7A1461AC1C3A1C3A009ECF24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1461AB1C3A1C3A009ECF24 /* main.m */; };
 		7A1461AF1C3A1C3A009ECF24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1461AE1C3A1C3A009ECF24 /* AppDelegate.m */; };
 		7A1461B11C3A1C3A009ECF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461B01C3A1C3A009ECF24 /* Assets.xcassets */; };
@@ -129,6 +139,17 @@
 		7A11F1031C43A88E00E507FB /* typeid6.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid6.plist; sourceTree = "<group>"; };
 		7A11F1051C43A89200E507FB /* typeud21.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeud21.plist; sourceTree = "<group>"; };
 		7A11F1071C43A89500E507FB /* typeid23.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = typeid23.plist; sourceTree = "<group>"; };
+		7A126E851C48E90A00119BCC /* BmobSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BmobSDK.framework; sourceTree = "<group>"; };
+		7A126E871C48E96E00119BCC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7A126E891C48E99B00119BCC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		7A126E8B1C48E9A500119BCC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7A126E8D1C48E9C500119BCC /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		7A126E8F1C48E9DE00119BCC /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		7A126E911C48E9EC00119BCC /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7A126E931C48E9F800119BCC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		7A126E991C48ED8600119BCC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7A126E9A1C48ED8600119BCC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7A126E9C1C48EDBD00119BCC /* login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = login.storyboard; sourceTree = "<group>"; };
 		7A1461A71C3A1C3A009ECF24 /* HiWeekend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HiWeekend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1461AB1C3A1C3A009ECF24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A1461AD1C3A1C3A009ECF24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -210,11 +231,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A126E941C48E9F800119BCC /* MediaPlayer.framework in Frameworks */,
+				7A126E921C48E9EC00119BCC /* AVFoundation.framework in Frameworks */,
+				7A126E901C48E9DE00119BCC /* libicucore.tbd in Frameworks */,
+				7A126E8E1C48E9C500119BCC /* libz.1.2.5.tbd in Frameworks */,
+				7A126E8C1C48E9A500119BCC /* CFNetwork.framework in Frameworks */,
+				7A126E8A1C48E99B00119BCC /* MobileCoreServices.framework in Frameworks */,
+				7ACB2AFC1C4650880099D8AC /* CoreGraphics.framework in Frameworks */,
+				7A126E881C48E96E00119BCC /* CoreLocation.framework in Frameworks */,
 				7A4E61611C477A3E00DA8ACE /* libc++.tbd in Frameworks */,
+				7A126E861C48E90A00119BCC /* BmobSDK.framework in Frameworks */,
 				7A4E615F1C477A2C00DA8ACE /* libsqlite3.0.tbd in Frameworks */,
 				7ACB2B001C4650A60099D8AC /* libsqlite3.tbd in Frameworks */,
 				7ACB2AFE1C4650930099D8AC /* libz.tbd in Frameworks */,
-				7ACB2AFC1C4650880099D8AC /* CoreGraphics.framework in Frameworks */,
 				7ACB2AFA1C46507D0099D8AC /* Foundation.framework in Frameworks */,
 				7ACB2AF81C4650730099D8AC /* UIKit.framework in Frameworks */,
 				7ACB2AF61C46506A0099D8AC /* CoreText.framework in Frameworks */,
@@ -288,6 +317,40 @@
 			path = ../Tools/VOSegmentedControl;
 			sourceTree = "<group>";
 		};
+		7A126E951C48ED5100119BCC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7A126E961C48ED5100119BCC /* Controller */,
+				7A126E971C48ED5100119BCC /* Model */,
+				7A126E981C48ED5100119BCC /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7A126E961C48ED5100119BCC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A126E991C48ED8600119BCC /* LoginViewController.h */,
+				7A126E9A1C48ED8600119BCC /* LoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7A126E971C48ED5100119BCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A126E981C48ED5100119BCC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A126E9C1C48EDBD00119BCC /* login.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7A14619E1C3A1C3A009ECF24 = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +399,7 @@
 		7A1461C41C3A4E35009ECF24 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				7A126E951C48ED5100119BCC /* Login */,
 				7A1461CB1C3A4E35009ECF24 /* Main */,
 				7A1461C51C3A4E35009ECF24 /* Discover */,
 				7A1461D11C3A4E35009ECF24 /* Mine */,
@@ -559,6 +623,14 @@
 		B777CC04BED718B6D38A8A85 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A126E931C48E9F800119BCC /* MediaPlayer.framework */,
+				7A126E911C48E9EC00119BCC /* AVFoundation.framework */,
+				7A126E8F1C48E9DE00119BCC /* libicucore.tbd */,
+				7A126E8D1C48E9C500119BCC /* libz.1.2.5.tbd */,
+				7A126E8B1C48E9A500119BCC /* CFNetwork.framework */,
+				7A126E891C48E99B00119BCC /* MobileCoreServices.framework */,
+				7A126E871C48E96E00119BCC /* CoreLocation.framework */,
+				7A126E851C48E90A00119BCC /* BmobSDK.framework */,
 				7A4E61601C477A3E00DA8ACE /* libc++.tbd */,
 				7A4E615E1C477A2C00DA8ACE /* libsqlite3.0.tbd */,
 				7ACB2AFF1C4650A60099D8AC /* libsqlite3.tbd */,
@@ -639,6 +711,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A126E9D1C48EDBD00119BCC /* login.storyboard in Resources */,
 				7A090E571C3F5D4B00614565 /* activityTheme in Resources */,
 				7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */,
 				7A7290751C450F2100FF1C84 /* discover in Resources */,
@@ -740,6 +813,7 @@
 				7A090E5A1C3F5ED400614565 /* ActivityThemeView.m in Sources */,
 				7A0E70DB1C3CBD9100D825CC /* SearchViewController.m in Sources */,
 				7A4EB8531C4740E700B6A5B1 /* ShareView.m in Sources */,
+				7A126E9B1C48ED8600119BCC /* LoginViewController.m in Sources */,
 				7A728FF71C44FA7B00FF1C84 /* DiscoveryTableViewCell.m in Sources */,
 				7A0C55391C3F9E1B003C764F /* PullingRefreshTableView.m in Sources */,
 				7A11F0FD1C438FE000E507FB /* VOContentLayer.m in Sources */,
@@ -856,6 +930,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeekend/Tools/pch.pch";
 				INFOPLIST_FILE = HiWeekend/Info.plist;
@@ -880,6 +958,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HiWeekend/Tools/pch.pch";
 				INFOPLIST_FILE = HiWeekend/Info.plist;

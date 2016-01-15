@@ -9,7 +9,6 @@
 #import "ShareViewController.h"
 
 @interface ShareViewController ()
-
 @end
 
 @implementation ShareViewController

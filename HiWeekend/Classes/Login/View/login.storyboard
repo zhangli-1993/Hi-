@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BoQ-TW-3X6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="hYB-gl-lUH">
+            <objects>
+                <viewController id="ETJ-ks-j1b" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ev6-kh-qOA"/>
+                        <viewControllerLayoutGuide type="bottom" id="1os-76-p8S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LbJ-nt-3rS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WS-os-j05">
+                                <rect key="frame" x="132" y="175" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.80392163989999998" green="0.89019614459999996" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="删除数据"/>
+                                <connections>
+                                    <action selector="deleteDta:" destination="ETJ-ks-j1b" eventType="touchUpInside" id="3qB-Gw-7Pc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3di-bF-Evh">
+                                <rect key="frame" x="132" y="218" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.80392163989999998" green="0.89019614459999996" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="修改数据"/>
+                                <connections>
+                                    <action selector="changeData:" destination="ETJ-ks-j1b" eventType="touchUpInside" id="j7g-75-vKd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIE-tf-krU">
+                                <rect key="frame" x="134" y="274" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.80392163989999998" green="0.89019614459999996" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="查询数据"/>
+                                <connections>
+                                    <action selector="findData:" destination="ETJ-ks-j1b" eventType="touchUpInside" id="crw-jn-BrM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAb-xa-lDq">
+                                <rect key="frame" x="132" y="120" width="111" height="30"/>
+                                <color key="backgroundColor" red="0.80392163989999998" green="0.89019614459999996" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
+                                <state key="normal" title="添加数据"/>
+                                <connections>
+                                    <action selector="addData:" destination="ETJ-ks-j1b" eventType="touchUpInside" id="pY0-x3-JVG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0cf-p5-zxO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZY-BL-SsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877.5" y="366.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Rlb-Rc-tNA">
+            <objects>
+                <navigationController storyboardIdentifier="login" automaticallyAdjustsScrollViewInsets="NO" id="BoQ-TW-3X6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EES-Je-Imt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ETJ-ks-j1b" kind="relationship" relationship="rootViewController" id="Bwc-6L-qAQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bH3-4T-ZUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="387" y="367"/>
+        </scene>
+    </scenes>
+</document>

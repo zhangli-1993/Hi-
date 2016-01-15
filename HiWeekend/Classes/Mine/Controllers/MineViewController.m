@@ -13,7 +13,7 @@
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
 #import "ShareView.h"
-
+#import "LoginViewController.h"
 @interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, MFMailComposeViewControllerDelegate, WBHttpRequestDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *headImageBtn;
@@ -131,7 +131,9 @@
 }
 
 - (void)login{
-    
+    UIStoryboard *loginSB = [UIStoryboard storyboardWithName:@"login" bundle:nil];
+    UINavigationController *nav = [loginSB instantiateViewControllerWithIdentifier:@"login"];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)sendEmail{
