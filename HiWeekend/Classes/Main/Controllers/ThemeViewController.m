@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showBackButton];
+    [self showBackButton:@"back"];
     self.tabBarController.tabBar.hidden = YES;
 }
 

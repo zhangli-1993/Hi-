@@ -24,7 +24,7 @@
     [super viewDidLoad];
     self.title = @"活动详情";
     
-    [self showBackButton];
+    [self showBackButton:@"back"];
     //隐藏tabbar
     self.tabBarController.tabBar.hidden = YES;
     //去地图页面

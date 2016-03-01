@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showBackButton];
+    [self showBackButton:@"back"];
     self.navigationController.navigationBar.barTintColor = kColor;
     // Do any additional setup after loading the view.
 }

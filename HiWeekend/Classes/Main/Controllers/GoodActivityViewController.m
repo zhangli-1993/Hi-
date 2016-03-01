@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"精选活动";
-    [self showBackButton];
+    [self showBackButton:@"back"];
     [self.view addSubview:self.tableView];
     //如果整张视图只想让他显示4行的话，后面就变成空白
     self.tableView.tableFooterView = [[UIView alloc] init];

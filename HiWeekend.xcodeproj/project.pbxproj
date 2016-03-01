@@ -57,6 +57,10 @@
 		7A1461E31C3A50E0009ECF24 /* MineStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E21C3A50E0009ECF24 /* MineStoryboard.storyboard */; };
 		7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */; };
 		7A1461E81C3A766B009ECF24 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */; };
+		7A19CE1B1C852CD70057CC67 /* SelectCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A19CE1A1C852CD70057CC67 /* SelectCityModel.m */; };
+		7A19CE1E1C8589000057CC67 /* HeaderCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A19CE1D1C8589000057CC67 /* HeaderCollectionView.m */; };
+		7A19CE201C85940B0057CC67 /* HeaderCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A19CE1F1C85940B0057CC67 /* HeaderCollectionView.xib */; };
+		7A19CE231C85BB2E0057CC67 /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A19CE221C85BB2E0057CC67 /* DataBaseManager.m */; };
 		7A4E615D1C4779D000DA8ACE /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4E61591C4779D000DA8ACE /* libWeChatSDK.a */; };
 		7A4E615F1C477A2C00DA8ACE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4E615E1C477A2C00DA8ACE /* libsqlite3.0.tbd */; };
 		7A4E61611C477A3E00DA8ACE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4E61601C477A3E00DA8ACE /* libc++.tbd */; };
@@ -169,6 +173,13 @@
 		7A1461E41C3A766B009ECF24 /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
 		7A1461E51C3A766B009ECF24 /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
 		7A1461E61C3A766B009ECF24 /* MainTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		7A19CE191C852CD70057CC67 /* SelectCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityModel.h; sourceTree = "<group>"; };
+		7A19CE1A1C852CD70057CC67 /* SelectCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityModel.m; sourceTree = "<group>"; };
+		7A19CE1C1C8589000057CC67 /* HeaderCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderCollectionView.h; sourceTree = "<group>"; };
+		7A19CE1D1C8589000057CC67 /* HeaderCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderCollectionView.m; sourceTree = "<group>"; };
+		7A19CE1F1C85940B0057CC67 /* HeaderCollectionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionView.xib; sourceTree = "<group>"; };
+		7A19CE211C85BB2E0057CC67 /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
+		7A19CE221C85BB2E0057CC67 /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
 		7A4E61591C4779D000DA8ACE /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		7A4E615B1C4779D000DA8ACE /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		7A4E615C1C4779D000DA8ACE /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
@@ -231,6 +242,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A4E615F1C477A2C00DA8ACE /* libsqlite3.0.tbd in Frameworks */,
+				7A126E881C48E96E00119BCC /* CoreLocation.framework in Frameworks */,
 				7A126E941C48E9F800119BCC /* MediaPlayer.framework in Frameworks */,
 				7A126E921C48E9EC00119BCC /* AVFoundation.framework in Frameworks */,
 				7A126E901C48E9DE00119BCC /* libicucore.tbd in Frameworks */,
@@ -238,10 +251,8 @@
 				7A126E8C1C48E9A500119BCC /* CFNetwork.framework in Frameworks */,
 				7A126E8A1C48E99B00119BCC /* MobileCoreServices.framework in Frameworks */,
 				7ACB2AFC1C4650880099D8AC /* CoreGraphics.framework in Frameworks */,
-				7A126E881C48E96E00119BCC /* CoreLocation.framework in Frameworks */,
 				7A4E61611C477A3E00DA8ACE /* libc++.tbd in Frameworks */,
 				7A126E861C48E90A00119BCC /* BmobSDK.framework in Frameworks */,
-				7A4E615F1C477A2C00DA8ACE /* libsqlite3.0.tbd in Frameworks */,
 				7ACB2B001C4650A60099D8AC /* libsqlite3.tbd in Frameworks */,
 				7ACB2AFE1C4650930099D8AC /* libz.tbd in Frameworks */,
 				7ACB2AFA1C46507D0099D8AC /* Foundation.framework in Frameworks */,
@@ -495,6 +506,8 @@
 				7AAA6B0A1C3BA0660030B5E5 /* MainModel.m */,
 				7A0C553F1C3FBE51003C764F /* GoodActivityModel.h */,
 				7A0C55401C3FBE51003C764F /* GoodActivityModel.m */,
+				7A19CE191C852CD70057CC67 /* SelectCityModel.h */,
+				7A19CE1A1C852CD70057CC67 /* SelectCityModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -516,6 +529,9 @@
 				7A11F0EF1C43420300E507FB /* HotActivityTableViewCell.h */,
 				7A11F0F01C43420300E507FB /* HotActivityTableViewCell.m */,
 				7A11F0F11C43420300E507FB /* HotActivityTableViewCell.xib */,
+				7A19CE1C1C8589000057CC67 /* HeaderCollectionView.h */,
+				7A19CE1D1C8589000057CC67 /* HeaderCollectionView.m */,
+				7A19CE1F1C85940B0057CC67 /* HeaderCollectionView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -597,6 +613,8 @@
 				7A5D0B5C1C3E8B23002D4089 /* UIView+Extension.m */,
 				7A5D0B5D1C3E8B23002D4089 /* UIViewController+Common.h */,
 				7A5D0B5E1C3E8B23002D4089 /* UIViewController+Common.m */,
+				7A19CE211C85BB2E0057CC67 /* DataBaseManager.h */,
+				7A19CE221C85BB2E0057CC67 /* DataBaseManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -729,6 +747,7 @@
 				7A0C55371C3F9E1B003C764F /* blueArrow.png in Resources */,
 				7A11F1041C43A88E00E507FB /* typeid6.plist in Resources */,
 				7A11F1061C43A89200E507FB /* typeud21.plist in Resources */,
+				7A19CE201C85940B0057CC67 /* HeaderCollectionView.xib in Resources */,
 				7A1095AD1C449F6700311EB0 /* ProgressHUD.bundle in Resources */,
 				7A0C55431C3FC327003C764F /* GoodActivity in Resources */,
 				7ACB2AEA1C464F4A0099D8AC /* WeiboSDK.bundle in Resources */,
@@ -793,12 +812,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A19CE1E1C8589000057CC67 /* HeaderCollectionView.m in Sources */,
+				7A19CE1B1C852CD70057CC67 /* SelectCityModel.m in Sources */,
 				7A0E70E41C3CBFEE00D825CC /* ClassifyViewController.m in Sources */,
 				7A0E70EA1C3CC06F00D825CC /* HotActivityViewController.m in Sources */,
 				7A4EB8591C474EC200B6A5B1 /* ShareViewController.m in Sources */,
 				7A1461E71C3A766B009ECF24 /* MainTableViewCell.m in Sources */,
 				7A0E70E71C3CC06200D825CC /* GoodActivityViewController.m in Sources */,
 				7A5D0B5F1C3E8B23002D4089 /* HWtools.m in Sources */,
+				7A19CE231C85BB2E0057CC67 /* DataBaseManager.m in Sources */,
 				7A11F0F21C43420300E507FB /* HotActivityTableViewCell.m in Sources */,
 				7A5D0B601C3E8B23002D4089 /* UIView+Extension.m in Sources */,
 				7A1461AF1C3A1C3A009ECF24 /* AppDelegate.m in Sources */,

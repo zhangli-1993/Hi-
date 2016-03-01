@@ -46,8 +46,17 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"abc"];
-    //self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:96.0 / 256.0f green:185.0/256.0f blue:191.0/256.0f alpha:1.0];
-    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(selectCityAction)];
+    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftBtn.frame = CGRectMake(0, 0, 60, 44);
+    [leftBtn setTitle:@"北京" forState:UIControlStateNormal];
+    [leftBtn setImage:[UIImage imageNamed:@"btn_chengshi"] forState:UIControlStateNormal];
+    //调整图片的位置
+    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, leftBtn.frame.size.width - 20, 0, 0)];
+    //调整文字的位置，距离button各个边界的距离
+    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 10)];
+    [leftBtn addTarget:self action:@selector(selectCityAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    
     leftBarBtn.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarBtn;
     
@@ -187,7 +196,8 @@
 
 - (void)selectCityAction{
     SelectCityViewController *selectCity = [[SelectCityViewController alloc] init];
-    [self.navigationController presentViewController:selectCity animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:selectCity];
+    [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)SearchAcitivity{
@@ -215,7 +225,7 @@
 - (void)requestModel{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:kMainDataList parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&cityid=%@", kMainDataList, self.cityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%lld", downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;

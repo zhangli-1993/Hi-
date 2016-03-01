@@ -38,7 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"分类列表";
-    [self showBackButton];
+    [self showBackButton:@"back"];
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView launchRefreshing];
     [self.tableView registerNib:[UINib nibWithNibName:@"GoodActivityTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];

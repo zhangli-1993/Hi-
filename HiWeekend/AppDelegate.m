@@ -13,11 +13,15 @@
 #import "WeiboSDK.h"
 #import "WXApi.h"
 #import <BmobSDK/Bmob.h>
-@interface AppDelegate ()<WeiboSDKDelegate, WXApiDelegate>
+#import <CoreLocation/CoreLocation.h>
+@interface AppDelegate ()<WeiboSDKDelegate, WXApiDelegate, CLLocationManagerDelegate>
 
-@property (strong, nonatomic) NSString *wbRefreshToken;
-@property (strong, nonatomic) NSString *wbCurrentUserID;
-
+//@property (strong, nonatomic) NSString *wbRefreshToken;
+//@property (strong, nonatomic) NSString *wbCurrentUserID;
+{
+    CLLocationManager *_locationManager;
+    CLGeocoder *_geocoder;
+}
 
 @end
 
@@ -31,6 +35,21 @@
     [WeiboSDK registerApp:kAppKey];
     [WXApi registerApp:kWXAppID];
     [Bmob registerWithAppKey:kBmobKey];
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    _geocoder = [[CLGeocoder alloc] init];
+    if (![CLLocationManager locationServicesEnabled]) {
+        ZLLog(@"定位服务当前可能尚未打开，请设置打开");
+    }
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [_locationManager requestWhenInUseAuthorization];
+    } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse){
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+        CLLocationDistance distance = 10.0;
+        _locationManager.distanceFilter = distance;
+        [_locationManager startUpdatingLocation];
+    }
 
     self.tab = [[UITabBarController alloc] init];
     self.tab.tabBar.barTintColor = [UIColor whiteColor];
@@ -75,6 +94,18 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    CLLocation *location = [locations firstObject];
+    CLLocationCoordinate2D coordinate = location.coordinate;
+    ZLLog(@"%f, %f, %f, %f, %f", coordinate.longitude, coordinate.latitude, location.altitude, location.course, location.speed);
+    [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        CLPlacemark *placeMark = [placemarks firstObject];
+        ZLLog(@"%@", placeMark.addressDictionary);
+    }];
+    [_locationManager stopUpdatingLocation];
+}
+
+
 #pragma mark---微博分享
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     return [WeiboSDK handleOpenURL:url delegate:self];
