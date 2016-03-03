@@ -20,7 +20,7 @@
 //关闭数据库
 - (void)closeDataBase;
 - (void)insertIntoNew:(SelectCityModel *)model;
-- (void)deleteModel:(SelectCityModel *)model;
-- (NSMutableArray *)selectCityModel;
+- (void)deleteModel;
+- (SelectCityModel *)selectCityModel;
 
 @end

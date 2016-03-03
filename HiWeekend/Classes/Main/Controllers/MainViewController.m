@@ -18,8 +18,12 @@
 #import "ClassifyViewController.h"
 #import "GoodActivityViewController.h"
 #import "HotActivityViewController.h"
-
-@interface MainViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+//#import "DataBaseManager.h"
+#import "SelectCityModel.h"
+@interface MainViewController ()<UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, SelectCityDelegate>
+{
+    NSString *cityId;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //全部列表数据
 @property(nonatomic, strong) NSMutableArray *listArray;
@@ -35,6 +39,9 @@
 @property(nonatomic, strong) NSTimer *timer;
 @property(nonatomic, strong) UIButton *btn1;
 @property(nonatomic, strong) UIButton *btn2;
+@property (nonatomic, strong) UIButton *leftBtn;
+@property (nonatomic, strong) SelectCityModel *cityModel;
+//@property (nonatomic, strong) DataBaseManager *dataBase;
 @end
 
 @implementation MainViewController
@@ -44,18 +51,23 @@
     // Do any additional setup after loading the view.
     self.navigationController.navigationBar.barTintColor = kColor;
     self.automaticallyAdjustsScrollViewInsets = NO;
+    cityId = @"1";
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"abc"];
-    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftBtn.frame = CGRectMake(0, 0, 60, 44);
-    [leftBtn setTitle:@"北京" forState:UIControlStateNormal];
-    [leftBtn setImage:[UIImage imageNamed:@"btn_chengshi"] forState:UIControlStateNormal];
+    self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.leftBtn.frame = CGRectMake(0, 0, 60, 44);
+    [self.leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, self.leftBtn.frame.size.width - 20, 0, 0)];
+
+    [self.leftBtn setImage:[UIImage imageNamed:@"btn_chengshi"] forState:UIControlStateNormal];
     //调整图片的位置
-    [leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, leftBtn.frame.size.width - 20, 0, 0)];
+    
     //调整文字的位置，距离button各个边界的距离
-    [leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 10)];
-    [leftBtn addTarget:self action:@selector(selectCityAction) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
+    [self.leftBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -20, 0, 7)];
+    self.leftBtn.titleLabel.font = [UIFont systemFontOfSize:16];
+    [self.leftBtn setTitle:@"北京" forState:UIControlStateNormal];
+
+    [self.leftBtn addTarget:self action:@selector(selectCityAction) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *leftBarBtn = [[UIBarButtonItem alloc] initWithCustomView:self.leftBtn];
     
     leftBarBtn.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarBtn;
@@ -68,19 +80,25 @@
     UIBarButtonItem *right = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
     self.navigationItem.rightBarButtonItem = right;
     [self configTableViewHeaderView];
-    
-    
-    
     //请求网络数据
     [self requestModel];
     //启动定时器
     [self startTimer];
     
 }
+
 //当主页面再次出来时，tabbar显示
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.tabBarController.tabBar.hidden = NO;
+//    self.dataBase = [DataBaseManager sharedInstance];
+//    self.cityModel = [self.dataBase selectCityModel];
+//    [self.leftBtn setTitle:self.cityModel.cityName forState:UIControlStateNormal];
+    [self.listArray removeAllObjects];
+    [self.adArray removeAllObjects];
+    [self.activityArray removeAllObjects];
+    [self.themeArray removeAllObjects];
+    [self requestModel];
 }
 #pragma mark---UITableViewDataSource
 
@@ -179,6 +197,7 @@
 - (void)mainActivityButtonAction:(UIButton *)btn{
     ClassifyViewController *cVVC = [[ClassifyViewController alloc] init];
     cVVC.classifyListType = btn.tag - 100 + 1;
+    cVVC.cityID = cityId;
     [self.navigationController pushViewController:cVVC animated:YES];
 }
 //精选活动
@@ -196,10 +215,21 @@
 
 - (void)selectCityAction{
     SelectCityViewController *selectCity = [[SelectCityViewController alloc] init];
+    selectCity.selectdelegate = self;
+    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:selectCity];
     [self.navigationController presentViewController:nav animated:YES completion:nil];
 }
-
+- (void)getCityName:(NSString *)cityName CityId:(NSString *)cityid{
+    [self.leftBtn setTitle:cityName forState:UIControlStateNormal];
+    NSInteger edge = -20;
+    if (cityName.length > 2) {
+        edge = -10;
+    }
+    [self.leftBtn setImageEdgeInsets:UIEdgeInsetsMake(0, self.leftBtn.frame.size.width + edge, 0, 0)];
+    cityId = cityid;
+    [self requestModel];
+}
 - (void)SearchAcitivity{
     SearchViewController *searchVC = [[SearchViewController alloc] init];
     [self.navigationController pushViewController:searchVC animated:YES];
@@ -225,7 +255,10 @@
 - (void)requestModel{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:[NSString stringWithFormat:@"%@&cityid=%@", kMainDataList, self.cityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    NSNumber *lat = [[NSUserDefaults standardUserDefaults] valueForKey:@"lat"];
+    NSNumber *lng = [[NSUserDefaults standardUserDefaults] valueForKey:@"lng"];
+
+    [manager GET:[NSString stringWithFormat:@"%@&cityid=%ld&lat=%@&lng=%@", kMainDataList, (long)[cityId integerValue], lat, lng] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%lld", downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *resultDic = responseObject;
@@ -234,6 +267,7 @@
         if ([status isEqualToString:@"success"] && code == 0) {
             NSDictionary *dic = resultDic[@"success"];
             //推荐活动
+
             NSArray *acDataArray = dic[@"acData"];
             //广告
             NSArray *adDataArray = dic[@"adData"];

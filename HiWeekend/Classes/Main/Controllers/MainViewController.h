@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SelectCityViewController.h"
 @interface MainViewController : UIViewController
-@property (nonatomic, strong) NSString *cityID;
 @end

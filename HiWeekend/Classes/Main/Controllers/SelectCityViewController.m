@@ -11,6 +11,7 @@
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import "SelectCityModel.h"
 #import "MainViewController.h"
+//#import "DataBaseManager.h"
 
 static NSString *itemIdentifier = @"item";
 static NSString *headerIdentifier = @"header";
@@ -18,6 +19,7 @@ static NSString *headerIdentifier = @"header";
 @interface SelectCityViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) UICollectionView *collectView;
 @property (nonatomic, strong) NSMutableArray *cityArray;
+@property (nonatomic, strong) HeaderCollectionView *headerView;
 @end
 
 @implementation SelectCityViewController
@@ -30,7 +32,7 @@ static NSString *headerIdentifier = @"header";
     [self.view addSubview:self.collectView];
     //加载数据
     [self loadData];
-    // Do any additional setup after loading the view.
+    
 }
 - (void)loadData{
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -58,10 +60,6 @@ static NSString *headerIdentifier = @"header";
     }];
 
 }
-
-
-
-
 
 #pragma mark---懒加载
 - (UICollectionView *)collectView{
@@ -116,15 +114,24 @@ static NSString *headerIdentifier = @"header";
     return CGSizeMake(kWidth / 3 - 1, kWidth / 6);
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+//    DataBaseManager *dataBase = [DataBaseManager sharedInstance];
+//    [dataBase deleteModel];
+    SelectCityModel *model =  self.cityArray[indexPath.row];
+//    [dataBase insertIntoNew:model];
+//    self.headerView.locationLabel.text = model.cityName;
+//    ZLLog(@"***%@", self.headerView.locationLabel.text);
+    if (self.selectdelegate && [self.selectdelegate respondsToSelector:@selector(getCityName:CityId:)]) {
+        ZLLog(@"name%@id%@", model.cityName, model.cityId);
+        [self.selectdelegate getCityName:model.cityName CityId:model.cityId];
+    }
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+
 }
 #pragma mark---UICollectionViewDelegate
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     HeaderCollectionView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:headerIdentifier forIndexPath:indexPath];
     headerView.backgroundColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.7];
     return headerView;
-    
 }
 
 #pragma mark---UICollectionViewDelegateFlowLayout

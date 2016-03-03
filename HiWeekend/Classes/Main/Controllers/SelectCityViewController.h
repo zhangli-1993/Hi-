@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol SelectCityDelegate <NSObject>
+- (void)getCityName:(NSString *)cityName CityId:(NSString *)cityid;
+@end
 @interface SelectCityViewController : UIViewController
-
+@property (nonatomic, assign) id<SelectCityDelegate>selectdelegate;
 @end

@@ -85,7 +85,7 @@ static sqlite3 *dataBase = nil;
     sqlite3_finalize(stmt);
 
 }
-- (void)deleteModel:(SelectCityModel *)model{
+- (void)deleteModel{
     [self openDataBase];
     sqlite3_stmt *stmt = nil;
     NSString *sql = @"delete from CityModel";
@@ -98,29 +98,24 @@ static sqlite3 *dataBase = nil;
     }
     sqlite3_finalize(stmt);
 }
-//- (NSMutableArray *)selectCityModel{
-//    [self openDataBase];
-//    sqlite3_stmt *stmt = nil;
-//    NSString *sql = @"select *from LinkMan";
-//    NSMutableArray *allArray = nil;
-//    int result = sqlite3_prepare_v2(dataBase, [sql UTF8String], -1, &stmt, NULL);
-//    if (result == SQLITE_OK) {
-//        allArray = [NSMutableArray new];
-//        while (sqlite3_step(stmt) == SQLITE_ROW) {
-//            const unsigned char *cityname = sqlite3_column_text(stmt, 0);
-//            const unsigned char *cityid = sqlite3_column_text(stmt, 1);
-//            SelectCityModel *model = [[SelectCityModel alloc]init];
-//            model.cityName = cityname;
-//            model.cityId = cityid;
-//            [allArray addObject:model];
-//        }
-//    } else {
-//        ZLLog(@"////");
-//        allArray = [NSMutableArray new];
-//    }
-//    sqlite3_finalize(stmt);
-//    NSLog(@"%@", allArray);
-//    return allArray;
-//
-//}
+- (SelectCityModel *)selectCityModel{
+    [self openDataBase];
+    sqlite3_stmt *stmt = nil;
+    NSString *sql = @"select *from CityModel";
+    int result = sqlite3_prepare_v2(dataBase, [sql UTF8String], -1, &stmt, NULL);
+    SelectCityModel *model = [[SelectCityModel alloc]init];
+    if (result == SQLITE_OK) {
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            NSString *cityname = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
+            NSString *cityid = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            model.cityName = cityname;
+            model.cityId = cityid;
+        }
+    } else {
+        ZLLog(@"查询失败");
+    }
+    sqlite3_finalize(stmt);
+    return model;
+
+}
 @end

@@ -16,6 +16,7 @@
 		7A0C553E1C3FA3AD003C764F /* GoodActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A0C553C1C3FA3AD003C764F /* GoodActivityTableViewCell.xib */; };
 		7A0C55411C3FBE51003C764F /* GoodActivityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C55401C3FBE51003C764F /* GoodActivityModel.m */; };
 		7A0C55431C3FC327003C764F /* GoodActivity in Resources */ = {isa = PBXBuildFile; fileRef = 7A0C55421C3FC327003C764F /* GoodActivity */; };
+		7A0DDA431C86FF8B002D4D75 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0DDA421C86FF8B002D4D75 /* RegisterViewController.m */; };
 		7A0E70D81C3CBBF200D825CC /* SelectCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70D71C3CBBF200D825CC /* SelectCityViewController.m */; };
 		7A0E70DB1C3CBD9100D825CC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70DA1C3CBD9100D825CC /* SearchViewController.m */; };
 		7A0E70DE1C3CBE7000D825CC /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0E70DD1C3CBE7000D825CC /* ActivityDetailViewController.m */; };
@@ -111,6 +112,8 @@
 		7A0C553F1C3FBE51003C764F /* GoodActivityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodActivityModel.h; sourceTree = "<group>"; };
 		7A0C55401C3FBE51003C764F /* GoodActivityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodActivityModel.m; sourceTree = "<group>"; };
 		7A0C55421C3FC327003C764F /* GoodActivity */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GoodActivity; sourceTree = "<group>"; };
+		7A0DDA411C86FF8B002D4D75 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		7A0DDA421C86FF8B002D4D75 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		7A0E70D61C3CBBF200D825CC /* SelectCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityViewController.h; sourceTree = "<group>"; };
 		7A0E70D71C3CBBF200D825CC /* SelectCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityViewController.m; sourceTree = "<group>"; };
 		7A0E70D91C3CBD9100D825CC /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -343,6 +346,8 @@
 			children = (
 				7A126E991C48ED8600119BCC /* LoginViewController.h */,
 				7A126E9A1C48ED8600119BCC /* LoginViewController.m */,
+				7A0DDA411C86FF8B002D4D75 /* RegisterViewController.h */,
+				7A0DDA421C86FF8B002D4D75 /* RegisterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 			files = (
 				7A19CE1E1C8589000057CC67 /* HeaderCollectionView.m in Sources */,
 				7A19CE1B1C852CD70057CC67 /* SelectCityModel.m in Sources */,
+				7A0DDA431C86FF8B002D4D75 /* RegisterViewController.m in Sources */,
 				7A0E70E41C3CBFEE00D825CC /* ClassifyViewController.m in Sources */,
 				7A0E70EA1C3CC06F00D825CC /* HotActivityViewController.m in Sources */,
 				7A4EB8591C474EC200B6A5B1 /* ShareViewController.m in Sources */,

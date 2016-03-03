@@ -95,14 +95,23 @@
     return YES;
 }
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
-    CLLocation *location = [locations firstObject];
+    CLLocation *location = [locations lastObject];
     CLLocationCoordinate2D coordinate = location.coordinate;
-    ZLLog(@"%f, %f, %f, %f, %f", coordinate.longitude, coordinate.latitude, location.altitude, location.course, location.speed);
+    ZLLog(@"///%f, ///%f, %f, %f, %f", coordinate.longitude, coordinate.latitude, location.altitude, location.course, location.speed);
+//
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    [userDef setValue:[NSNumber numberWithDouble:coordinate.latitude] forKey:@"lat"];
+    [userDef setValue:[NSNumber numberWithDouble:coordinate.longitude] forKey:@"lng"];
+    
     [_geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         CLPlacemark *placeMark = [placemarks firstObject];
+        [[NSUserDefaults standardUserDefaults] setValue:placeMark.addressDictionary[@"City"] forKey:@"city"];
+        [userDef synchronize];
         ZLLog(@"%@", placeMark.addressDictionary);
     }];
     [_locationManager stopUpdatingLocation];
+
+   
 }
 
 

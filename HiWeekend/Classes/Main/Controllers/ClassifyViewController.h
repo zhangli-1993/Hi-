@@ -10,4 +10,5 @@
 
 @interface ClassifyViewController : UIViewController
 @property (nonatomic, assign) ClassifyListType classifyListType;
+@property (nonatomic, strong) NSString *cityID;
 @end

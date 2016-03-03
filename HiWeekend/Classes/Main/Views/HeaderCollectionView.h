@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HeaderCollectionView : UICollectionReusableView
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end

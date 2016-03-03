@@ -17,6 +17,9 @@
 @interface ClassifyViewController ()<UITableViewDataSource, UITableViewDelegate,PullingRefreshTableViewDelegate>
 {
     NSInteger _pageCount;
+    NSNumber *lat;
+    NSNumber *lng;
+
 }
 @property (nonatomic, strong) PullingRefreshTableView *tableView;
 //用来负责展示数据的数组
@@ -45,6 +48,9 @@
     self.tabBarController.tabBar.hidden = YES;
    // _pageCount = 1;
     [self.tableView launchRefreshing];
+    lat = [[NSUserDefaults standardUserDefaults] valueForKey:@"lat"];
+    lng = [[NSUserDefaults standardUserDefaults] valueForKey:@"lng"];
+
 
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.segctrl1];
@@ -122,7 +128,7 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [ProgressHUD show:@"拼命加载中..."];
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassifyList, _pageCount, @(6)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@&lat=%@&lng=%@&cityid=%@", kClassifyList, _pageCount, @(6), lat, lng, self.cityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"数据已经加载成功"];
@@ -155,7 +161,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [ProgressHUD show:@"拼命加载中..."];
 
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassifyList, _pageCount, @(23)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@&lat=%@&lng=%@&cityid=%@", kClassifyList, _pageCount, @(23), lat, lng, self.cityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"数据已经加载成功"];
@@ -190,7 +196,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [ProgressHUD show:@"拼命加载中..."];
 
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassifyList, _pageCount, @(22)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@&lat=%@&lng=%@&cityid=%@", kClassifyList, _pageCount, @(22), lat, lng, self.cityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"数据已经加载成功"];
@@ -225,7 +231,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [ProgressHUD show:@"拼命加载中..."];
 
-    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@", kClassifyList, _pageCount, @(21)] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [manager GET:[NSString stringWithFormat:@"%@&page=%ld&typeid=%@&lat=%@&lng=%@&cityid=%@", kClassifyList, _pageCount, @(21), lat, lng, self.cityID] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         ZLLog(@"%@", downloadProgress);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [ProgressHUD showSuccess:@"数据已经加载成功"];
